@@ -1,2 +1,2 @@
-# [Studio Berict](berict.com)
+# [Studio Berict](http://berict.com)
 Official webpage of Studio Berict
