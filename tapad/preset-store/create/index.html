@@ -13,7 +13,7 @@
 <head>
     <title>Preset store</title>
     <link rel="stylesheet" href="../../css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-blue.min.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-blue.min.css"/>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' type='text/css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -50,6 +50,8 @@
                     <div class="name">Specify files</div>
                     <div class="info">
                         select file
+                        <!--just open file button or something-->
+                        <!--music/file_name-->
                     </div>
                 </section>
             </div>
@@ -64,6 +66,7 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_title" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_title">Title</label>
+                            <!--about/title-->
                         </div>
                     </form>
                 </section>
@@ -72,6 +75,7 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_preset_creator" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_preset_creator">Preset creator</label>
+                            <!--about/preset_creator-->
                         </div>
                     </form>
                 </section>
@@ -80,24 +84,29 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_theme_color" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_theme_color">Theme color</label>
+                            <!--about/actionbar_color-->
                         </div>
                     </form>
                 </section>
                 <section class="element">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="song_tutorial_link" pattern="-?(^youtube.com/.+?" autocomplete="off">
+                            <input class="mdl-textfield__input" type="text" id="song_tutorial_link"
+                                   pattern="-?(^youtube.com/.+?" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_tutorial_link">Tutorial video link</label>
                             <span class="mdl-textfield__error">Input should be a YouTube video link</span>
+                            <!--about/tutorial_link-->
                         </div>
                     </form>
                 </section>
                 <section class="element">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="song_bpm" pattern="-?[0-9]*(\.[0-9]+)?" autocomplete="off">
+                            <input class="mdl-textfield__input" type="text" id="song_bpm" pattern="-?[0-9]*(\.[0-9]+)?"
+                                   autocomplete="off">
                             <label class="mdl-textfield__label" for="song_bpm">BPM</label>
                             <span class="mdl-textfield__error">Input should be a number</span>
+                            <!--music/bpm-->
                         </div>
                     </form>
                 </section>
@@ -105,6 +114,7 @@
                     <div class="name">Album art</div>
                     <div class="info">
                         select file
+                        <!--don't make this yet-->
                     </div>
                 </section>
             </div>
@@ -114,46 +124,96 @@
         <section class="tab">
             <div class="title">Song store details</div>
             <div class="content">
+                <!--make the inputs same as above-->
                 <section class="element">
                     <div class="name">YouTube</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"youtube"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"youtube"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">SoundCloud</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"soundcloud"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"soundcloud"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Spotify</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"spotify"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"spotify"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Google Play Music</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"google_play_music"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"google_play_music"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Apple Music</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"apple"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"apple"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Amazon Music</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"amazon"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"amazon"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Pandora Music</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"pandora"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"pandora"
+                        -->
                     </div>
                 </section>
             </div>
@@ -167,6 +227,7 @@
                     <div class="name">Full name</div>
                     <div class="info">
                         input
+                        <!--about/bio/name-->
                     </div>
                 </section>
                 <section class="element">
@@ -185,12 +246,14 @@
                     <div class="name">Biography</div>
                     <div class="info">
                         input
+                        <!--about/bio/text-->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Biography source</div>
                     <div class="info">
                         input
+                        <!--about/bio/source-->
                     </div>
                 </section>
             </div>
@@ -204,42 +267,91 @@
                     <div class="name">Facebook</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"facebook"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"facebook"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Twitter</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"twitter"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"twitter"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">SoundCloud</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"soundcloud"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"soundcloud"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Instagram</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"instagram"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"instagram"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Google Plus</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"google_plus"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"google_plus"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">YouTube</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"youtube"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"youtube"
+                        -->
                     </div>
                 </section>
                 <section class="element">
                     <div class="name">Webpage</div>
                     <div class="info">
                         input
+                        <!--
+                            about/details/items/hint:[input]
+                            about/details/items/hint_is_visible:false
+                            about/details/items/image_id":"web"
+                            about/details/items/runnable_is_with_anim":false,
+                            about/details/items/text_id":"web"
+                        -->
                     </div>
                 </section>
             </div>
