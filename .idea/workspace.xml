@@ -23,13 +23,20 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tapad/preset-store/create/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="204" column="26" lean-forward="true" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
+                <state relative-caret-position="448">
+                  <caret line="270" column="26" lean-forward="true" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#292#0" expanded="false" />
+                    <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -539,7 +546,7 @@
       <workItem from="1498373794725" duration="4094000" />
       <workItem from="1498841223457" duration="6409000" />
       <workItem from="1499957129615" duration="1831000" />
-      <workItem from="1500203101750" duration="3290000" />
+      <workItem from="1500203101750" duration="4035000" />
     </task>
     <task id="LOCAL-00001" summary="Added WebStorm files">
       <created>1498059834070</created>
@@ -660,11 +667,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500206149316</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added margin top style">
+      <created>1500206525297</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1500206525297</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20973000" />
+    <option name="totallyTimeSpent" value="21718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -740,7 +754,8 @@
     <MESSAGE value="Added preset creator details" />
     <MESSAGE value="Added JSON variable details" />
     <MESSAGE value="Added JSON variable details, preset type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JSON variable details, preset type" />
+    <MESSAGE value="Added margin top style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added margin top style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -753,9 +768,16 @@
           <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -791,9 +813,16 @@
           <caret line="88" column="126" lean-forward="false" selection-start-line="88" selection-start-column="126" selection-end-line="88" selection-end-column="126" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -836,9 +865,16 @@
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -901,9 +937,16 @@
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1018,13 +1061,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tapad/preset-store/create/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="204" column="26" lean-forward="true" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
+        <state relative-caret-position="448">
+          <caret line="270" column="26" lean-forward="true" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#1;n#section#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />

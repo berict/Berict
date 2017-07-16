@@ -41,11 +41,10 @@
         <section class="tab">
             <div class="title">Sounds</div>
             <div class="content">
-                <section class="element">
-                    <div class="name">Specify files</div>
-                    <div class="info">
-                        select file
-                    </div>
+                <section class="element" style="margin-bottom:20px;">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">
+                        Specify files
+                    </button>
                 </section>
             </div>
         </section>
@@ -78,6 +77,22 @@
                         </div>
                     </form>
                 </section>
+                <section class="element" style="margin-top:-15px;">
+                    <div class="name" style="margin-bottom:10px;">Preset type</div>
+                    <div class="info" style="margin-bottom:15px;">
+                        <!-- Left aligned menu below button -->
+                        <button id="demo-menu-lower-left"
+                                class="mdl-button ">
+                            Select
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="demo-menu-lower-left">
+                            <li class="mdl-menu__item">Gesture preset</li>
+                            <li class="mdl-menu__item">Normal preset</li>
+                        </ul>
+                    </div>
+                </section>
                 <section class="element">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -106,18 +121,10 @@
                         </div>
                     </form>
                 </section>
-                <section class="element">
-                    <div class="name">Preset type</div>
-                    <div class="info">
-                        Gesture preset<br>
-                        Normal preset
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">Album art</div>
-                    <div class="info">
-                        select file
-                    </div>
+                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">
+                        Album art
+                    </button>
                 </section>
             </div>
         </section>
@@ -197,17 +204,15 @@
                         </div>
                     </form>
                 </section>
-                <section class="element">
-                    <div class="name">Artist image</div>
-                    <div class="info">
-                        select file
-                    </div>
+                <section class="element" style="margin-bottom:10px; margin-top:-15px">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">
+                        Artist image
+                    </button>
                 </section>
-                <section class="element">
-                    <div class="name">Artist icon</div>
-                    <div class="info">
-                        select file
-                    </div>
+                <section class="element" style="margin-bottom:20px;">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">
+                        Artist icon
+                    </button>
                 </section>
                 <section class="element">
                     <form>
@@ -292,7 +297,7 @@
         </section>
     </div>
     <div id="fab" style="cursor: pointer" onclick="createPreset()">
-        <i class="material-icons md-24 vertical-align-middle padding-bottom-4">add</i>
+        <i class="material-icons md-24 vertical-align-middle padding-bottom-4">create</i>
     </div>
 </main>
 </body>
