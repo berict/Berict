@@ -60,7 +60,7 @@
             <div class="title">Song details</div>
             <div class="content" style="margin-top:35px;">
                 <section class="element">
-                    <form id="form_1">
+                    <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_title" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_title">Title</label>
@@ -68,7 +68,7 @@
                     </form>
                 </section>
                 <section class="element">
-                    <form id="form_2">
+                    <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_preset_creator" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_preset_creator">Preset creator</label>
@@ -76,7 +76,7 @@
                     </form>
                 </section>
                 <section class="element">
-                    <form id="form_3">
+                    <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_theme_color" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_theme_color">Theme color</label>
@@ -84,7 +84,7 @@
                     </form>
                 </section>
                 <section class="element">
-                    <form id="form_4">
+                    <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_tutorial_link" pattern="-?(^youtube.com/.+?" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_tutorial_link">Tutorial video link</label>
@@ -93,7 +93,7 @@
                     </form>
                 </section>
                 <section class="element">
-                    <form id="form_5">
+                    <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_bpm" pattern="-?[0-9]*(\.[0-9]+)?" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_bpm">BPM</label>
@@ -113,48 +113,62 @@
     <div id="about_card" class="card">
         <section class="tab">
             <div class="title">Song store details</div>
-            <div class="content">
+            <div class="content" style="margin-top:35px;">
                 <section class="element">
-                    <div class="name">YouTube</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_youtube" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_youtube">YouTube</label>
+                        </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">SoundCloud</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_soundcloud" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_soundcloud">SoundCloud</label>
+                        </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Spotify</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_spotify" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_spotify">Spotify</label>
+                        </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Google Play Music</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_googleplay" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_googleplay">Google Play Music</label>
+                      </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Apple Music</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_apple" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_apple">Apple Music</label>
+                      </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Amazon Music</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_amazon" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_amazon">Amazon Music</label>
+                      </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Pandora Music</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="store_pandora" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_pandora">Pandora Music</label>
+                      </div>
+                    </form>
                 </section>
             </div>
         </section>
@@ -163,12 +177,14 @@
         <section class="tab">
             <div class="title">Artist biography</div>
             <div class="content">
-                <section class="element">
-                    <div class="name">Full name</div>
-                    <div class="info">
-                        input
+              <section class="element">
+                  <form>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="bio_fullname" autocomplete="off">
+                          <label class="mdl-textfield__label" for="bio_fullname">Full name</label>
                     </div>
-                </section>
+                  </form>
+              </section>
                 <section class="element">
                     <div class="name">Artist image</div>
                     <div class="info">
@@ -182,16 +198,20 @@
                     </div>
                 </section>
                 <section class="element">
-                    <div class="name">Biography</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="bio" autocomplete="off">
+                            <label class="mdl-textfield__label" for="bio">Biography</label>
+                      </div>
+                    </form>
                 </section>
                 <section class="element">
-                    <div class="name">Biography source</div>
-                    <div class="info">
-                        input
-                    </div>
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="bio_source" autocomplete="off">
+                            <label class="mdl-textfield__label" for="bio_source">Biography Source</label>
+                      </div>
+                    </form>
                 </section>
             </div>
         </section>
@@ -200,48 +220,61 @@
         <section class="tab">
             <div class="title">Artist details</div>
             <div class="content">
-                <section class="element">
-                    <div class="name">Facebook</div>
-                    <div class="info">
-                        input
+              <section class="element">
+                  <form>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="artist_facebook" autocomplete="off">
+                          <label class="mdl-textfield__label" for="artist_facebook">Facebook</label>
                     </div>
-                </section>
-                <section class="element">
-                    <div class="name">Twitter</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">SoundCloud</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">Instagram</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">Google Plus</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">YouTube</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
-                <section class="element">
-                    <div class="name">Webpage</div>
-                    <div class="info">
-                        input
-                    </div>
-                </section>
+                  </form>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_twitter" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_twitter">Twitter</label>
+                        </div>
+                      </form>
+                  </section>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_soundcloud" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_soundcloud">Soundcloud</label>
+                        </div>
+                      </form>
+                  </section>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_insta" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_insta">Instagram</label>
+                        </div>
+                      </form>
+                  </section>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_google" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_google">Google Plus</label>
+                        </div>
+                      </form>
+                  </section>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_youtube" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_youtube">YouTube</label>
+                        </div>
+                      </form>
+                  </section>
+                  <section class="element">
+                      <form>
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                              <input class="mdl-textfield__input" type="text" id="artist_web" autocomplete="off">
+                              <label class="mdl-textfield__label" for="artist_web">Webpage</label>
+                        </div>
+                      </form>
+                  </section>
             </div>
         </section>
     </div>
