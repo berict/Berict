@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dee6acb4-2df1-4701-8f19-1a5a2d6811c1" name="Default" comment="">
+    <list default="true" id="dee6acb4-2df1-4701-8f19-1a5a2d6811c1" name="Default" comment="Updated file inputs to buttons / Added dropdown menu for preset type">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tapad/preset-store/create/index.html" afterPath="$PROJECT_DIR$/tapad/preset-store/create/index.html" />
     </list>
@@ -23,15 +23,14 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tapad/preset-store/create/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="270" column="26" lean-forward="true" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+                <state relative-caret-position="312">
+                  <caret line="75" column="88" lean-forward="false" selection-start-line="75" selection-start-column="88" selection-end-line="75" selection-end-column="88" />
                   <folding>
                     <element signature="e#0#292#0" expanded="false" />
                     <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -546,7 +545,7 @@
       <workItem from="1498373794725" duration="4094000" />
       <workItem from="1498841223457" duration="6409000" />
       <workItem from="1499957129615" duration="1831000" />
-      <workItem from="1500203101750" duration="4035000" />
+      <workItem from="1500203101750" duration="4444000" />
     </task>
     <task id="LOCAL-00001" summary="Added WebStorm files">
       <created>1498059834070</created>
@@ -674,11 +673,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500206525297</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Updated file inputs to buttons / Added dropdown menu for preset type">
+      <created>1500207268302</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1500207268302</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21718000" />
+    <option name="totallyTimeSpent" value="22127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -755,7 +761,8 @@
     <MESSAGE value="Added JSON variable details" />
     <MESSAGE value="Added JSON variable details, preset type" />
     <MESSAGE value="Added margin top style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added margin top style" />
+    <MESSAGE value="Updated file inputs to buttons / Added dropdown menu for preset type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated file inputs to buttons / Added dropdown menu for preset type" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -772,7 +779,6 @@
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -817,7 +823,6 @@
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -869,7 +874,6 @@
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -941,7 +945,6 @@
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1061,15 +1064,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tapad/preset-store/create/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="270" column="26" lean-forward="true" selection-start-line="270" selection-start-column="26" selection-end-line="270" selection-end-column="26" />
+        <state relative-caret-position="312">
+          <caret line="75" column="88" lean-forward="false" selection-start-line="75" selection-start-column="88" selection-end-line="75" selection-end-column="88" />
           <folding>
             <element signature="e#0#292#0" expanded="false" />
             <element signature="n#style#0;n#section#0;n#div#1;n#section#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#3;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#7;n#div#1;n#section#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#section#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
