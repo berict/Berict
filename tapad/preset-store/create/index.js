@@ -3,11 +3,11 @@ function makeJSON(){
     "about" : {
       "actionbar_color" : $("#song_theme_color").val(),
       "bio" : {
-        "name" : $("#bio_fullname").val(),
-        "preset_name" : "unknown..",
+        "name" : $("#bio_name").val(),
+        "preset_name" : "CUSTOM_VALUE_NO_INPUT_NEEDED",
         "source" : $("#bio_source").val(),
-        "text" : "unknown..",
-        "title" : $("#song_title").val()
+        "text" : $("#bio_text").val(),
+        "title" : $("#song_artist").val() + "\u0027s biography"
       },
       "details" : [
         {
@@ -62,7 +62,7 @@ function makeJSON(){
               "text_id" : "web"
             }
           ],
-          "title" : "unknown.."
+          "title" : "About " + $("#song_artist").val()
         },
         {
           "items":[
@@ -120,17 +120,17 @@ function makeJSON(){
         }
       ],
       "preset_creator" : $("#song_preset_creator").val(),
-      "preset_name" : "unknown..",
+      "preset_name" : "CUSTOM_VALUE_NO_INPUT_NEEDED",
       "title" : $("#song_title").val(),
-      "tutorial_link" : ""
+      "tutorial_link" : $("#song_tutorial_link").val()
     },
-    "firebase_location" : "",
+    "firebase_location" : "CUSTOM_VALUE_NO_INPUT_NEEDED",
     "music" : {
-      "bpm" : "",
-      "file_name" : "",
+      "bpm" : $("#song_bpm").val(),
+      "file_name" : "CUSTOM_VALUE_NO_INPUT_NEEDED",
       "is_gesture" : "",
-      "name" : "",
-      "sound_count" : ""
+      "name" : "CUSTOM_VALUE_NO_INPUT_NEEDED",
+      "sound_count" : "PROGRAMMATIC_INPUT"
     }
   }
   var jsonStr = JSON.stringify(jsonObject); //change object into String
