@@ -1,3 +1,4 @@
+var sound_count;
 function makeJSON() {
     var jsonObject = {
         "about": {
@@ -141,10 +142,11 @@ function makeJSON() {
 function createPreset() {
     //if create button clicked
     makeJSON();
+    sound_count = document.getElementById("upload_sound").files.length;
+    alert(sound_count); //test for sound_count
 }
 
 function locateSound() {
-
 }
 
 function setDropDownMenu(string) {
