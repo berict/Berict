@@ -42,7 +42,7 @@
             <div class="title">Sounds</div>
             <div class="content">
                 <section class="element" style="margin-bottom:20px;">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">
+                    <button onclick="locateSound()" class="mdl-button mdl-js-button mdl-button--raised">
                         Specify files
                     </button>
                 </section>
@@ -79,16 +79,15 @@
                 </section>
                 <section class="element" style="margin-top:-20px;">
                     <div class="info" style="margin-bottom:10px;">
-                        <!-- Left aligned menu below button -->
-                        <button id="demo-menu-lower-left"
+                        <button id="dropdown-preset-type"
                                 class="mdl-button ">
                             Select preset type
                         </button>
 
                         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                            for="demo-menu-lower-left">
-                            <li class="mdl-menu__item">Gesture preset</li>
-                            <li class="mdl-menu__item">Normal preset</li>
+                            for="dropdown-preset-type">
+                            <li class="mdl-menu__item" onclick="setDropDownMenu('Gesture preset')">Gesture preset</li>
+                            <li class="mdl-menu__item" onclick="setDropDownMenu('Normal preset')">Normal preset</li>
                         </ul>
                     </div>
                 </section>
