@@ -1,5 +1,7 @@
 var sound_count;
+var audiofolder=0;
 var pubstr;
+var chdimg1=0,chdimg2=0,chdimg3=0;
 var imglink = new Array();
 zip = new JSZip();
 function makeJSON() {
@@ -143,41 +145,60 @@ function makeJSON() {
     console.log(jsonStr);
 }
 function createPreset() {
-    //if create button clicked
-    var reader = new FileReader();
-    sound_count = document.getElementById("upload_sound").files.length;
-    makeJSON(); //make JSON with changed sound_count
-    alert(sound_count); //test for sound_count
-    var zip = new JSZip(); //make zip file
-    var about = zip.folder("about");
-    var sounds = zip.folder("sounds");
-    var timing = zip.folder("timing");
-    about.file("json", pubstr); //create JSON.txt
-    var pattern = /.+,/g;
-    for(var i=0; i<imglink.length; i++)
-    {
-      var replace = imglink[i].replace(pattern, "");
-      var fileName;
-      switch (i) {
-        case 0:
-        fileName = "album_art";
-        break;
-        case 1:
-        fileName = "artist_image";
-        break;
-        case 2:
-        fileName = "artist_icon";
-        break;
-      }
-      about.file(fileName, replace, {base64: true});
+if(audiofolder==0)
+{
+  alert("Please upload audio folder.")
+}
+else if(chdimg1==0||chdimg2==0||chdimg3==0)
+{
+  alert("Please upload all files.");
+}
+else if($("#song_bpm").val()==""||$("#song_tutorial_link").val()==""||$("#song_title").val()==""||$("#song_preset_creator").val()==""||$("#store_pandora").val()==""||$("#store_amazon").val()==""||$("#store_apple").val()==""||$("#story_googleplay").val()==""||$("#store_spotify").val()==""||$("#store_youtube").val()==""||$("#store_soundcloud").val()==""||$("#song_artist").val()==""||$("#artist_web").val()==""||$("#artist_youtube").val()==""||$("#artist_google").val()==""||$("#artist_insta").val()==""||$("#artist_soundcloud").val()==""||$("#artist_twitter").val()==""||$("#artist_facebook").val()==""||
+$("#song_artist").val()==""||$("#bio_text").val()==""||$("#bio_source").val()==""||$("#bio_name").val()==""||$("#song_theme_color").val()==""){
+  alert("Please fill out all information.");
+}
+else
+{
+  //if create button clicked
+  var reader = new FileReader();
+  sound_count = document.getElementById("upload_sound").files.length;
+  makeJSON(); //make JSON with changed sound_count
+  alert(sound_count); //test for sound_count
+  var zip = new JSZip(); //make zip file
+  var about = zip.folder("about");
+  var sounds = zip.folder("sounds");
+  var timing = zip.folder("timing");
+  about.file("json", pubstr); //create JSON.txt
+  var pattern = /.+,/g;
+  for(var i=0; i<imglink.length; i++)
+  {
+    var replace = imglink[i].replace(pattern, "");
+    var fileName;
+    switch (i) {
+      case 0:
+      fileName = "album_art";
+      break;
+      case 1:
+      fileName = "artist_image";
+      break;
+      case 2:
+      fileName = "artist_icon";
+      break;
     }
-    zip.generateAsync({type:"blob"})
-    .then(function(content) {
-    saveAs(content, "preset.zip"); //save zip file
+    about.file(fileName, replace, {base64: true});
+  }
+  zip.generateAsync({type:"blob"})
+  .then(function(content) {
+  saveAs(content, "preset.zip"); //save zip file
 });
+}
 }
 
 function locateSound() {
+}
+
+function changed(){
+  audiofolder=1;
 }
 
 function setDropDownMenu(string) {
@@ -209,6 +230,7 @@ $(function() {
         });
 
         function readURL1(input) {
+          chdimg1 = 1;
             if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -222,6 +244,7 @@ $(function() {
         }
 
         function readURL2(input) {
+          chdimg2 = 1;
             if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -235,6 +258,7 @@ $(function() {
         }
 
         function readURL3(input) {
+          chdimg3 = 1;
             if (input.files && input.files[0]) {
             var reader = new FileReader();
 

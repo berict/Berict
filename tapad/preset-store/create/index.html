@@ -48,7 +48,7 @@
             <div class="title">Sounds</div>
             <div class="content">
                 <section class="element" style="margin-bottom:20px;">
-                  <input id="upload_sound" type="file" webkitdirectory directory style="display: block;">
+                  <input id="upload_sound" type="file" webkitdirectory directory style="display: block;" onchange="changed()">
                 </section>
             </div>
         </section>
@@ -107,7 +107,7 @@
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_tutorial_link"
-                                   pattern="-?(^youtube.com/.+?" autocomplete="off">
+                                   pattern="\0" autocomplete="off">
                             <label class="mdl-textfield__label" for="song_tutorial_link">Tutorial video link</label>
                             <span class="mdl-textfield__error">Input should be a YouTube video link</span>
                         </div>
