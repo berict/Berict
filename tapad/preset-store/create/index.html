@@ -29,6 +29,9 @@
           type="image/png"
           href="../../../img/favicon.png">
     <style>
+      .file_input_div {position: relative; width: 200px; height: 50px; overflow: hidden;}
+      .file_input_hidden {font-size: 45px; position: absolute; right: 0px; top: 0px; opacity: 0; filter: alpha(opacity=0); -ms-filter: "alpha(opacity=0)"; -khtml-opacity: 0; -moz-opacity: 0;}
+      .file_input_textbox {float: left}
     </style>
 </head>
 <body>
@@ -119,10 +122,12 @@
                         </div>
                     </form>
                 </section>
+                <img id="album" src="#" alt="your Album Art will be here" />
                 <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">
-                        Upload album art
-                    </button>
+                  <div class="file_input_div">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload Album Art</button>
+                    <input type="file" class="file_input_hidden" id="albumart" accept="image/gif, image/jpeg, image/png">
+                  </div>
                 </section>
             </div>
         </section>
@@ -202,15 +207,19 @@
                         </div>
                     </form>
                 </section>
-                <section class="element" style="margin-bottom:10px; margin-top:-15px">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">
-                        Upload artist image
-                    </button>
+                <img id="artistimg" src="#" alt="your Artist Image will be here" />
+                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
+                  <div class="file_input_div">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist image</button>
+                    <input type="file" class="file_input_hidden" id="artist_image" accept="image/gif, image/jpeg, image/png">
+                  </div>
                 </section>
-                <section class="element" style="margin-bottom:20px;">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">
-                        Upload artist icon
-                    </button>
+                <img id="artisticon" src="#" alt="your Artist Icon will be here" />
+                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
+                  <div class="file_input_div">
+                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist icon</button>
+                    <input type="file" class="file_input_hidden" id="artist_icon" accept="image/gif, image/jpeg, image/png">
+                  </div>
                 </section>
                 <section class="element">
                     <form>
@@ -300,5 +309,9 @@
 </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="jszip-utils.js"></script>
+<script src="jszip.js"></script>
+<script src="FileSaver.js"></script>
 <script src="index.js"></script>
+
 </html>

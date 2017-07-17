@@ -1,4 +1,7 @@
 var sound_count;
+var pubstr;
+var imglink = new Array();
+zip = new JSZip();
 function makeJSON() {
     var jsonObject = {
         "about": {
@@ -131,19 +134,47 @@ function makeJSON() {
             "file_name": "CUSTOM_VALUE_NO_INPUT_NEEDED",
             "is_gesture": isGesturePreset(),
             "name": "CUSTOM_VALUE_NO_INPUT_NEEDED",
-            "sound_count": "PROGRAMMATIC_INPUT"
+            "sound_count": sound_count
         }
     };
     //change object into String
     var jsonStr = JSON.stringify(jsonObject);
+    pubstr = jsonStr;
     console.log(jsonStr);
 }
-
 function createPreset() {
     //if create button clicked
-    makeJSON();
+    var reader = new FileReader();
     sound_count = document.getElementById("upload_sound").files.length;
+    makeJSON(); //make JSON with changed sound_count
     alert(sound_count); //test for sound_count
+    var zip = new JSZip(); //make zip file
+    var about = zip.folder("about");
+    var sounds = zip.folder("sounds");
+    var timing = zip.folder("timing");
+    about.file("json", pubstr); //create JSON.txt
+    var pattern = /.+,/g;
+    for(var i=0; i<imglink.length; i++)
+    {
+      var replace = imglink[i].replace(pattern, "");
+      var fileName;
+      switch (i) {
+        case 0:
+        fileName = "album_art";
+        break;
+        case 1:
+        fileName = "artist_image";
+        break;
+        case 2:
+        fileName = "artist_icon";
+        break;
+      }
+      about.file(fileName, replace, {base64: true});
+    }
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+    saveAs(content, "preset.zip"); //save zip file
+});
 }
 
 function locateSound() {
@@ -161,3 +192,57 @@ function isGesturePreset() {
         return false;
     }
 }
+$(function() {
+            $("#albumart").on('change', function(){
+                readURL1(this);
+            });
+        });
+$(function() {
+            $("#artist_image").on('change', function(){
+                readURL2(this);
+            });
+        });
+$(function() {
+            $("#artist_icon").on('change', function(){
+                readURL3(this);
+            });
+        });
+
+        function readURL1(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#album').attr('src', e.target.result);
+                    imglink.push(e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#artistimg').attr('src', e.target.result);
+                    imglink.push(e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL3(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#artisticon').attr('src', e.target.result);
+                    imglink.push(e.target.result);
+                }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
