@@ -32,6 +32,7 @@
       .file_input_div {position: relative; width: 200px; height: 50px; overflow: hidden;}
       .file_input_hidden {font-size: 45px; position: absolute; right: 0px; top: 0px; opacity: 0; filter: alpha(opacity=0); -ms-filter: "alpha(opacity=0)"; -khtml-opacity: 0; -moz-opacity: 0;}
       .file_input_textbox {float: left}
+      .preview {max-width: 50%; max-height: 50%;}
     </style>
 </head>
 <body>
@@ -122,7 +123,8 @@
                         </div>
                     </form>
                 </section>
-                <img id="album" src="#" alt="your Album Art will be here" />
+                <img id="album" src="img/preview.png" alt="your Album Art will be here" class="preview"/>
+                <section class="element"></section>
                 <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
                   <div class="file_input_div">
                     <button class="mdl-button mdl-js-button mdl-button--raised">Upload Album Art</button>
@@ -207,14 +209,16 @@
                         </div>
                     </form>
                 </section>
-                <img id="artistimg" src="#" alt="your Artist Image will be here" />
+                <img id="artistimg" src="img/preview.png" alt="your Artist Image will be here" class="preview"/>
+                <section class="element"></section>
                 <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
                   <div class="file_input_div">
                     <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist image</button>
                     <input type="file" class="file_input_hidden" id="artist_image" accept="image/gif, image/jpeg, image/png">
                   </div>
                 </section>
-                <img id="artisticon" src="#" alt="your Artist Icon will be here" />
+                <img id="artisticon" src="img/preview.png" alt="your Artist Icon will be here" class="preview"/>
+                <section class="element"></section>
                 <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
                   <div class="file_input_div">
                     <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist icon</button>
