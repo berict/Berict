@@ -16,6 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <meta name="description" content="Useful and fun applications with quality.">
     <meta name="author" content="Studio Berict">
@@ -28,17 +29,24 @@
       <style>
       .presetbox{
         float: left;
+        text-align: center;
       }
       .previewimg{
-        max-width: 30%;
-        max-height: 30%;
+        max-width: 40%;
+        max-height: 20%;
       }
       .previewtext{
         max-width: 60%;
         margin-left: 10px;
       }
       .previewtextbox{
-        width: 70%;
+        width: 100%;
+      }
+      .previewtext_title{
+        font-size: 1rem;
+      }
+      .previewtext_detail{
+        font-size: 0.8rem;
       }
       </style>
 </head>
@@ -56,12 +64,18 @@
                 <div class="title">Presets</div>
                 <div class="content">
                     <section class="element">
-                        <span class="presetbox">
-                          <img class="previewimg" src="testimg.png">
-                          <span class="previewtextbox">
-                          </span>
-                            JSON에서 받아온 info의 일부분abcdefghijklmnopqrs
-                        </span>
+                        <div class="presetbox">
+                          <img class="previewimg img-circle" src="faded.jpg">
+                          <div class="previewtextbox">
+                            <br />
+                            <div class="previewtext_title">
+                            Alen walker - Faded
+                            </div>
+                            <div class="previewtext_detail">
+                              something detail
+                            </div>
+                          </div>
+                        </div>
                     </section>
                     <!-- <hr align="left"/>
                     <section class="element">
@@ -107,5 +121,6 @@
     </footer> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>
