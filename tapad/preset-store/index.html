@@ -12,115 +12,155 @@
 <html lang="en">
 <head>
     <title>Preset store</title>
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <meta name="description" content="Useful and fun applications with quality.">
     <meta name="author" content="Studio Berict">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="theme-color" content="#9575CD">
-    <meta name="google-site-verification" content="2UUz8GiOgKqRZK5wiOw5VU700bSVCbzUtadaEo0B6dM" />
+    <meta name="google-site-verification" content="2UUz8GiOgKqRZK5wiOw5VU700bSVCbzUtadaEo0B6dM"/>
     <link rel="icon"
-      type="image/png"
-      href="../../img/favicon.png">
-      <style>
-      .presetbox{
-        float: left;
-        text-align: center;
-      }
-      .previewimg{
-        max-width: 40%;
-        max-height: 20%;
-      }
-      .previewtext{
-        max-width: 60%;
-        margin-left: 10px;
-      }
-      .previewtextbox{
-        width: 100%;
-      }
-      .previewtext_title{
-        font-size: 1rem;
-      }
-      .previewtext_detail{
-        font-size: 0.8rem;
-      }
-      </style>
+          type="image/png"
+          href="../../img/favicon.png">
+    <style>
+        a {
+            color: #9575CD !important; /*Change link color */
+        }
+
+        a:hover {
+            color: #2196F3 !important; /*Change link color (on mouse over)*/
+        }
+
+        #blue_bg {
+            background-color: #9575CD !important; /* Change top background color */
+        }
+
+        #about_card > .tab > .title {
+            color: #2196F3 !important; /*Change title and title icon color (About Card)*/
+        }
+
+        #contact_card > .tab > .title {
+            color: #2196F3 !important; /*Change title and title icon color (Contact Card)*/
+        }
+
+        #contact_card a:hover {
+            color: #2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
+        }
+
+        #fab {
+            background-color: #2196F3 !important; /*Change FAB background color */
+        }
+
+        #fab:hover {
+            background-color: #1976D2 !important; /*Change FAB background color (on mouse over) */
+        }
+
+        /* custom css only for here */
+
+        .presetbox {
+            float: left;
+            text-align: center;
+        }
+
+        .previewimg {
+            max-width: 40%;
+            max-height: 20%;
+        }
+
+        .previewtext {
+            max-width: 60%;
+            margin-left: 10px;
+        }
+
+        .previewtextbox {
+            width: 100%;
+        }
+
+        .previewtext_title {
+            font-size: 1rem;
+        }
+
+        .previewtext_detail {
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-    <div id="blue_bg"></div>
-    <header>
-        <div id="quick_card" class="card">
-            <h1 id="name">Preset store</h1>
-            <h2 id="description">Discover and download new presets.</h2>
-        </div>
-    </header>
-    <main>
-        <div id="about_card" class="card">
-            <section class="tab">
-                <div class="title">Presets</div>
-                <div class="content">
-                    <section class="element">
-                        <div class="presetbox">
-                          <img class="previewimg img-circle" src="faded.jpg">
-                          <div class="previewtextbox">
-                            <br />
+<div id="blue_bg"></div>
+<header>
+    <div id="quick_card" class="card">
+        <h1 id="name">Preset store</h1>
+        <h2 id="description">Discover and download new presets.</h2>
+    </div>
+</header>
+<main>
+    <div id="about_card" class="card">
+        <section class="tab">
+            <div class="title">Presets</div>
+            <div class="content">
+                <section class="element">
+                    <div class="presetbox">
+                        <img class="previewimg img-circle" src="faded.jpg">
+                        <div class="previewtextbox">
+                            <br/>
                             <div class="previewtext_title">
-                            Alen walker - Faded
+                                Alen walker - Faded
                             </div>
                             <div class="previewtext_detail">
-                              something detail
+                                something detail
                             </div>
-                          </div>
                         </div>
-                    </section>
-                    <!-- <hr align="left"/>
-                    <section class="element">
-                        <div class="name">Your second work</div>
-                        <div class="info">Description and <a href="http://yourlinkhere" target="_blank">link</a></div>
-                    </section> -->
-                    <!-- You can add more product details ! -->
-                </div>
-            </section>
-        </div>
-        <div id="about_card" class="card">
-            <section class="tab">
-                <div class="title">Manage presets</div>
-                <div class="content">
-                    <section class="element">
-                        <div class="name">Create</div>
-                        <div class="info">
-                            <a href="create">Create a new preset</a>
-                        </div>
-                    </section>
-                    <hr align="left" />
-                    <section class="element">
-                        <div class="name">Edit</div>
-                        <div class="info">
-                            <a href="edit">Edit preset</a>
-                        </div>
-                    </section>
-                    <!-- <hr align="left"/>
-                    <section class="element">
-                        <div class="name">Your second work</div>
-                        <div class="info">Description and <a href="http://yourlinkhere" target="_blank">link</a></div>
-                    </section> -->
-                    <!-- You can add more product details ! -->
-                </div>
-            </section>
-        </div>
-        <a href="create">
-            <div id="fab"><i class="material-icons md-24 vertical-align-middle padding-bottom-4">add</i></div>
-        </a>
-    </main>
-    <!-- <footer>
-      <small>Powered by <a href="http://www.bedrockpic.com" target="_blank">Bedrock Pictures</a></small>
-    </footer> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+                    </div>
+                </section>
+                <!-- <hr align="left"/>
+                <section class="element">
+                    <div class="name">Your second work</div>
+                    <div class="info">Description and <a href="http://yourlinkhere" target="_blank">link</a></div>
+                </section> -->
+                <!-- You can add more product details ! -->
+            </div>
+        </section>
+    </div>
+    <div id="about_card" class="card">
+        <section class="tab">
+            <div class="title">Manage presets</div>
+            <div class="content">
+                <section class="element">
+                    <div class="name">Create</div>
+                    <div class="info">
+                        <a href="create">Create a new preset</a>
+                    </div>
+                </section>
+                <hr align="left">
+                <section class="element">
+                    <div class="name">Edit</div>
+                    <div class="info">
+                        <a href="edit">Edit preset</a>
+                    </div>
+                </section>
+                <!-- <hr align="left"/>
+                <section class="element">
+                    <div class="name">Your second work</div>
+                    <div class="info">Description and <a href="http://yourlinkhere" target="_blank">link</a></div>
+                </section> -->
+                <!-- You can add more product details ! -->
+            </div>
+        </section>
+    </div>
+    <a href="create">
+        <div id="fab"><i class="material-icons md-24 vertical-align-middle padding-bottom-4">add</i></div>
+    </a>
+</main>
+<!-- <footer>
+  <small>Powered by <a href="http://www.bedrockpic.com" target="_blank">Bedrock Pictures</a></small>
+</footer> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="index.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

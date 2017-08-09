@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
     <title>Preset store</title>
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../../../css/style.css" type="text/css">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-blue.min.css"/>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' type='text/css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
@@ -29,10 +29,73 @@
           type="image/png"
           href="../../../img/favicon.png">
     <style>
-      .file_input_div {position: relative; width: 200px; height: 50px; overflow: hidden;}
-      .file_input_hidden {font-size: 45px; position: absolute; right: 0px; top: 0px; opacity: 0; filter: alpha(opacity=0); -ms-filter: "alpha(opacity=0)"; -khtml-opacity: 0; -moz-opacity: 0;}
-      .file_input_textbox {float: left}
-      .preview {max-width: 50%; max-height: 50%;}
+        a {
+            color: #9575CD !important; /*Change link color */
+        }
+
+        a:hover {
+            color: #2196F3 !important; /*Change link color (on mouse over)*/
+        }
+
+        .element {
+            padding-top: 15px;
+        }
+
+        form {
+            margin-top: -30px;
+        }
+
+        #blue_bg {
+            background-color: #9575CD !important; /* Change top background color */
+        }
+
+        #about_card > .tab > .title {
+            color: #2196F3 !important; /*Change title and title icon color (About Card)*/
+        }
+
+        #contact_card > .tab > .title {
+            color: #2196F3 !important; /*Change title and title icon color (Contact Card)*/
+        }
+
+        #contact_card a:hover {
+            color: #2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
+        }
+
+        #fab {
+            background-color: #2196F3 !important; /*Change FAB background color */
+        }
+
+        #fab:hover {
+            background-color: #1976D2 !important; /*Change FAB background color (on mouse over) */
+        }
+
+        .file_input_div {
+            position: relative;
+            width: 200px;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .file_input_hidden {
+            font-size: 45px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -ms-filter: "alpha(opacity=0)";
+            -khtml-opacity: 0;
+            -moz-opacity: 0;
+        }
+
+        .file_input_textbox {
+            float: left
+        }
+
+        .preview {
+            max-width: 50%;
+            max-height: 50%;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +111,8 @@
             <div class="title">Sounds</div>
             <div class="content">
                 <section class="element" style="margin-bottom:20px;">
-                  <input id="upload_sound" type="file" webkitdirectory directory style="display: block;" onchange="changed()">
+                    <input id="upload_sound" type="file" webkitdirectory directory style="display: block;"
+                           onchange="changed()">
                 </section>
             </div>
         </section>
@@ -125,11 +189,12 @@
                 </section>
                 <img id="album" src="img/preview.png" alt="your Album Art will be here" class="preview"/>
                 <section class="element"></section>
-                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
-                  <div class="file_input_div">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload Album Art</button>
-                    <input type="file" class="file_input_hidden" id="albumart" accept="image/gif, image/jpeg, image/png">
-                  </div>
+                <section class="element" style="margin-top:-15px; margin-bottom:20px;">
+                    <div class="file_input_div">
+                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload Album Art</button>
+                        <input type="file" class="file_input_hidden" id="albumart"
+                               accept="image/gif, image/jpeg, image/png">
+                    </div>
                 </section>
             </div>
         </section>
@@ -211,19 +276,21 @@
                 </section>
                 <img id="artistimg" src="img/preview.png" alt="your Artist Image will be here" class="preview"/>
                 <section class="element"></section>
-                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
-                  <div class="file_input_div">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist image</button>
-                    <input type="file" class="file_input_hidden" id="artist_image" accept="image/gif, image/jpeg, image/png">
-                  </div>
+                <section class="element" style="margin-top:-15px; margin-bottom:20px;">
+                    <div class="file_input_div">
+                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist image</button>
+                        <input type="file" class="file_input_hidden" id="artist_image"
+                               accept="image/gif, image/jpeg, image/png">
+                    </div>
                 </section>
                 <img id="artisticon" src="img/preview.png" alt="your Artist Icon will be here" class="preview"/>
                 <section class="element"></section>
-                <section class="element"  style="margin-top:-15px; margin-bottom:20px;">
-                  <div class="file_input_div">
-                    <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist icon</button>
-                    <input type="file" class="file_input_hidden" id="artist_icon" accept="image/gif, image/jpeg, image/png">
-                  </div>
+                <section class="element" style="margin-top:-15px; margin-bottom:20px;">
+                    <div class="file_input_div">
+                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist icon</button>
+                        <input type="file" class="file_input_hidden" id="artist_icon"
+                               accept="image/gif, image/jpeg, image/png">
+                    </div>
                 </section>
                 <section class="element">
                     <form>
@@ -244,7 +311,7 @@
             </div>
         </section>
     </div>
-    <div id="about_card" class="card">
+    <div id="contact_card" class="card">
         <section class="tab">
             <div class="title">Artist details</div>
             <div class="content" style="margin-top:35px;">

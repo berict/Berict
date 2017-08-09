@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
     <title>Bedrock Pictures</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,6 +26,31 @@
     <link rel="icon"
           type="image/png"
           href="../img/favicon.png">
+    <style>
+        a {
+            color: #9E9E9E !important; /*Change link color */
+        }
+
+        #blue_bg {
+            background-color: #9E9E9E !important; /* Change top background color */
+        }
+
+        #about_card > .tab > .title {
+            color: #3F51B5 !important; /*Change title and title icon color (About Card)*/
+        }
+
+        #contact_card > .tab > .title {
+            color: #3F51B5 !important; /*Change title and title icon color (Contact Card)*/
+        }
+
+        #fab {
+            background-color: #3F51B5 !important; /*Change FAB background color */
+        }
+
+        #fab:hover {
+            background-color: #303F9F !important; /*Change FAB background color (on mouse over) */
+        }
+    </style>
 </head>
 <body>
 <div id="blue_bg"></div>
@@ -140,17 +165,20 @@
             <div class="title">GitHub Repositories</div>
             <div class="content">
                 <section class="element">
-                    <div class="name">Batch-Render-All-Events - <a href="https://github.com/BedrockDev/Batch-Render-All-Events">Repository</a></div>
+                    <div class="name">Batch-Render-All-Events - <a
+                            href="https://github.com/BedrockDev/Batch-Render-All-Events">Repository</a></div>
                     <div class="info">Vegas Pro 13.0 Plugin to render all sound track events by solo</div>
                 </section>
                 <hr align="left">
                 <section class="element">
-                    <div class="name">Sunrin2017 - <a href="https://github.com/BedrockDev/Sunrin2017">Repository</a></div>
+                    <div class="name">Sunrin2017 - <a href="https://github.com/BedrockDev/Sunrin2017">Repository</a>
+                    </div>
                     <div class="info">Sunrin history archive about 2nd grade, 2017</div>
                 </section>
                 <hr align="left">
                 <section class="element">
-                    <div class="name">Sunrin2016 - <a href="https://github.com/BedrockDev/Sunrin2016">Repository</a></div>
+                    <div class="name">Sunrin2016 - <a href="https://github.com/BedrockDev/Sunrin2016">Repository</a>
+                    </div>
                     <div class="info">Sunrin history archive about 1st grade, 2016</div>
                 </section>
             </div>
@@ -172,8 +200,5 @@
         <div id="fab"><i class="material-icons md-24 vertical-align-middle padding-bottom-4">mail</i></div>
     </a>
 </main>
-<!-- <footer>
-  <small>Powered by <a href="http://www.bedrockpic.com" target="_blank">Bedrock Pictures</a></small>
-</footer> -->
 </body>
 </html>
