@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
     <title>Tapad</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,6 +25,41 @@
     <link rel="icon"
       type="image/png"
       href="../img/favicon.png">
+    <style>
+        a{
+            color: #9575CD !important; /*Change link color */
+        }
+        a:hover{
+            color:#2196F3 !important; /*Change link color (on mouse over)*/
+        }
+        #blue_bg{
+            background-color: #9575CD !important; /* Change top background color */
+        }
+        .element{
+            padding-top:15px;
+        }
+        form {
+            margin-top: -30px;
+        }
+        #about_card>.tab>.title{
+            color: #2196F3 !important; /*Change title and title icon color (About Card)*/
+        }
+        #about_card .element .info{
+            line-height: 26px;
+        }
+        #contact_card>.tab>.title{
+            color: #2196F3 !important; /*Change title and title icon color (Contact Card)*/
+        }
+        #contact_card a:hover{
+            color:#2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
+        }
+        #fab{
+            background-color:#2196F3 !important; /*Change FAB background color */
+        }
+        #fab:hover{
+            background-color:#1976D2 !important; /*Change FAB background color (on mouse over) */
+        }
+    </style>
 </head>
 <body>
     <div id="blue_bg"></div>
@@ -111,7 +146,7 @@
                 </div>
             </section>
         </div>
-        <div id="about_card" class="card">
+        <div id="contact_card" class="card">
             <section class="tab">
                 <div class="title">Preset store</div>
                 <div class="content">
