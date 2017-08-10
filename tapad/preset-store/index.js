@@ -19,14 +19,14 @@ $(document).ready(
 
 var list;
 
-function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag) {
+function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
     if ($("#progress").is(":visible")) {
         $("#progress").fadeOut(200, function () {
             $(this).remove();
         });
-        $(getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag)).hide().delay(200).appendTo(list).fadeIn(200);
+        $(getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag, color)).hide().delay(200).appendTo(list).fadeIn(200);
     } else {
-        $(getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag)).hide().appendTo(list).fadeIn(200);
+        $(getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag, color)).hide().appendTo(list).fadeIn(200);
     }
     $("img").hide().one("load", function () {
         $(this).fadeIn(200);
@@ -36,7 +36,7 @@ function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag) {
     });
 }
 
-function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag) {
+function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
     // maybe use some jquery
     var preset = document.createElement("DIV");
     preset.className = "preset";
@@ -70,6 +70,7 @@ function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, t
     var download = document.createElement("BUTTON");
     download.className = "mdl-button";
     setText(download, "Download");
+    download.style.color = color;
     download.onclick = function () {
         downloadPreset(tag)
     };
@@ -92,7 +93,8 @@ function setAdapter() {
                 child.about.songArtist,
                 child.about.presetArtist,
                 child.isGesture,
-                child.tag
+                child.tag,
+                child.about.color
             );
         });
         database = snapshot.val().presets;
