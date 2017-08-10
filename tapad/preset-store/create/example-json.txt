@@ -1,134 +1,129 @@
 {  
     "about":{  
-        "actionbar_color":"#00D3BE",
-        "bio":{  
+        "bio":{
             "name":"Alan Olav Walker",
-            "preset_name":"alan_walker_faded_gesture",
             "source":"Powered by Wikipedia X last.fm",
             "text":"Alan Walker (Alan Olav Walker) is a British-Norwegian record producer who was born in Northampton, England. He recorded electronic dance music single \"Faded\" and his song released on NoCopyrightSounds, \"Fade\".",
             "title":"Alan Walker\u0027s biography"
         },
-        "details":[  
-            {  
-                "items":[  
-                    {  
+        "color":"#00D3BE",
+        "details":[
+            {
+                "items":[
+                    {
                         "hint":"https://facebook.com/alanwalkermusic",
-                        "hint_is_visible":true,
-                        "image_id":"facebook",
-                        "runnable_is_with_anim":false,
-                        "text_id":"facebook"
+                        "imageId":"facebook",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"facebook"
                     },
-                    {  
+                    {
                         "hint":"https://twitter.com/IAmAlanWalker",
-                        "hint_is_visible":true,
-                        "image_id":"twitter",
-                        "runnable_is_with_anim":false,
-                        "text_id":"twitter"
+                        "imageId":"twitter",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"twitter"
                     },
-                    {  
+                    {
                         "hint":"https://soundcloud.com/alanwalker",
-                        "hint_is_visible":true,
-                        "image_id":"soundcloud",
-                        "runnable_is_with_anim":false,
-                        "text_id":"soundcloud"
+                        "imageId":"soundcloud",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"soundcloud"
                     },
-                    {  
+                    {
                         "hint":"https://instagram.com/alanwalkermusic",
-                        "hint_is_visible":true,
-                        "image_id":"instagram",
-                        "runnable_is_with_anim":false,
-                        "text_id":"instagram"
+                        "imageId":"instagram",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"instagram"
                     },
-                    {  
+                    {
                         "hint":"https://plus.google.com/u/0/+Alanwalkermusic",
-                        "hint_is_visible":true,
-                        "image_id":"google_plus",
-                        "runnable_is_with_anim":false,
-                        "text_id":"google_plus"
+                        "imageId":"google_plus",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"google_plus"
                     },
-                    {  
+                    {
                         "hint":"https://youtube.com/user/DjWalkzz",
-                        "hint_is_visible":true,
-                        "image_id":"youtube",
-                        "runnable_is_with_anim":false,
-                        "text_id":"youtube"
+                        "imageId":"youtube",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"youtube"
                     },
-                    {  
+                    {
                         "hint":"http://alanwalkermusic.no",
-                        "hint_is_visible":true,
-                        "image_id":"web",
-                        "runnable_is_with_anim":false,
-                        "text_id":"web"
+                        "imageId":"web",
+                        "isHintVisible":true,
+                        "isRunnableWithAnim":false,
+                        "text":"web"
                     }
                 ],
                 "title":"About Alan Walker"
             },
-            {  
-                "items":[  
-                    {  
-                        "hint":"https://soundcloud.com/alanwalker/faded-1",
-                        "hint_is_visible":false,
-                        "image_id":"soundcloud",
-                        "runnable_is_with_anim":false,
-                        "text_id":"soundcloud"
+            {
+                "items":[
+                    {
+                        "hint":"https://soundcloud.com/alanwalker/placeholder-1",
+                        "imageId":"soundcloud",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"soundcloud"
                     },
-                    {  
+                    {
                         "hint":"https://youtu.be/60ItHLz5WEA",
-                        "hint_is_visible":false,
-                        "image_id":"youtube",
-                        "runnable_is_with_anim":false,
-                        "text_id":"youtube"
+                        "imageId":"youtube",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"youtube"
                     },
-                    {  
+                    {
                         "hint":"https://open.spotify.com/track/1brwdYwjltrJo7WHpIvbYt",
-                        "hint_is_visible":false,
-                        "image_id":"spotify",
-                        "runnable_is_with_anim":false,
-                        "text_id":"spotify"
+                        "imageId":"spotify",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"spotify"
                     },
-                    {  
+                    {
                         "hint":"https://play.google.com/store/music/album/Alan_Walker_Faded?id\u003dBgdyyljvf7b624pbv5ylcrfevte",
-                        "hint_is_visible":false,
-                        "image_id":"google_play_music",
-                        "runnable_is_with_anim":false,
-                        "text_id":"google_play_music"
+                        "imageId":"google_play_music",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"google_play_music"
                     },
-                    {  
-                        "hint":"https://itunes.apple.com/us/album/faded/id1196294554?i\u003d1196294581",
-                        "hint_is_visible":false,
-                        "image_id":"apple",
-                        "runnable_is_with_anim":false,
-                        "text_id":"apple"
+                    {
+                        "hint":"https://itunes.apple.com/us/album/placeholder/id1196294554?i\u003d1196294581",
+                        "imageId":"apple",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"apple"
                     },
-                    {  
+                    {
                         "hint":"https://amazon.com/Faded/dp/B01NBYNKWJ",
-                        "hint_is_visible":false,
-                        "image_id":"amazon",
-                        "runnable_is_with_anim":false,
-                        "text_id":"amazon"
+                        "imageId":"amazon",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"amazon"
                     },
-                    {  
-                        "hint":"https://pandora.com/alan-walker/faded-single/faded",
-                        "hint_is_visible":false,
-                        "image_id":"pandora",
-                        "runnable_is_with_anim":false,
-                        "text_id":"pandora"
+                    {
+                        "hint":"https://pandora.com/alan-walker/placeholder-single/placeholder",
+                        "imageId":"pandora",
+                        "isHintVisible":false,
+                        "isRunnableWithAnim":false,
+                        "text":"pandora"
                     }
                 ],
                 "title":"About this track"
             }
         ],
-        "preset_creator":"Studio Berict",
-        "preset_name":"alan_walker_faded_gesture",
-        "title":"Alan Walker - Faded",
-        "tutorial_link":"null"
+        "isTutorialAvailable":false,
+        "presetArtist":"Studio Berict",
+        "songArtist":"Alan Walker",
+        "songName":"Faded"
     },
-    "firebase_location":"alan_walker_faded_gesture",
-    "music":{  
-        "bpm":90,
-        "file_name":"alan_walker_faded_gesture",
-        "is_gesture":true,
-        "name":"preset_faded",
-        "sound_count":246
-    }
+    "bpm":90,
+    "isGesture":true,
+    "soundCount":245,
+    "tag":"alan_walker_faded_gesture"
 }
