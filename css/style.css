@@ -81,6 +81,7 @@ a:hover {
     position: relative;
     padding: 15px 32px 8px 32px;
     margin-top: 22px;
+    margin-bottom: 40px;
 }
 
 #about_card > .tab {
