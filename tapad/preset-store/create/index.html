@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../../../css/font-awesome.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jszip-utils.js"></script>
+    <script src="jszip.js"></script>
+    <script src="FileSaver.js"></script>
+    <script src="index.js"></script>
     <meta name="description" content="Useful and fun applications with quality.">
     <meta name="author" content="Studio Berict">
     <meta name="viewport"
@@ -96,7 +101,78 @@
             max-width: 50%;
             max-height: 50%;
         }
+
+        .file-div {
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+            position: relative;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            border: 2px solid white;
+        }
+
+        .file-input {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+        .file-input-description {
+            height: 100px;
+            width: 300px;
+            padding: 4px;
+            margin: auto;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        .file-input-icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .file-input-text {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .file-input-list {
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 2px;
+        }
+
+        .file-image {
+            width: 200px;
+            height: 200px;
+        }
+
+        img.file-image {
+            display: none;
+        }
+
+        .mdl-button {
+            display: block;
+            margin-top: 12px;
+        }
+
+        .file-image.file-input-description {
+            padding-top: 40px;
+        }
     </style>
+    <script src="../index.js"></script>
 </head>
 <body>
 <div id="blue_bg"></div>
@@ -111,8 +187,19 @@
             <div class="title">Sounds</div>
             <div class="content">
                 <section class="element" style="margin-bottom:20px;">
-                    <input id="upload_sound" type="file" webkitdirectory directory style="display: block;"
-                           onchange="changed()">
+                    <div class="file-div" id="input_sounds_div">
+                        <div class="file-input-description" id="upload_sounds">
+                            <img class="file-input-icon" id="input_sounds_icon" src="img/upload.png"/>
+                            <br>
+                            <span class="file-input-text"
+                                  id="input_sounds_text">Drag & drop <b><i>sounds</i></b> or click to browse</span>
+                        </div>
+                        <input class="file-input" id="input_sounds" multiple="multiple" name="files[]" type="file"
+                               accept="audio/*"/>
+                    </div>
+                    <div id="upload_sounds_list">
+                        <!-- File list -->
+                    </div>
                 </section>
             </div>
         </section>
@@ -145,13 +232,12 @@
                         </div>
                     </form>
                 </section>
-                <section class="element" style="margin-top:-20px;">
-                    <div class="info" style="margin-bottom:10px;">
+                <section class="element" style="margin-top:-35px; margin-bottom:15px;">
+                    <div class="info">
                         <button id="dropdown-preset-type"
                                 class="mdl-button ">
                             Select preset type
                         </button>
-
                         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
                             for="dropdown-preset-type">
                             <li class="mdl-menu__item" onclick="setDropDownMenu('Gesture preset')">Gesture preset</li>
@@ -187,13 +273,19 @@
                         </div>
                     </form>
                 </section>
-                <img id="album" src="img/preview.png" alt="your Album Art will be here" class="preview"/>
-                <section class="element"></section>
                 <section class="element" style="margin-top:-15px; margin-bottom:20px;">
-                    <div class="file_input_div">
-                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload Album Art</button>
-                        <input type="file" class="file_input_hidden" id="albumart"
-                               accept="image/gif, image/jpeg, image/png">
+                    <div class="file-div file-image" id="input_album_art_div">
+                        <div class="file-input-description file-image" id="upload_album_art">
+                            <img class="file-input-icon" id="input_album_art_icon" src="img/upload.png"/>
+                            <br>
+                            <span class="file-input-text"
+                                  id="input_album_art_text">Drag & drop <b><i>album art image</i></b> or click to browse</span>
+                        </div>
+                        <input class="file-input file-image" id="input_album_art" multiple="multiple" name="files[]"
+                               type="file" accept="image/*"/>
+                    </div>
+                    <div id="upload_album_art_preview_div">
+                        <img class="file-image" id="upload_album_art_preview"/>
                     </div>
                 </section>
             </div>
@@ -274,22 +366,33 @@
                         </div>
                     </form>
                 </section>
-                <img id="artistimg" src="img/preview.png" alt="your Artist Image will be here" class="preview"/>
-                <section class="element"></section>
                 <section class="element" style="margin-top:-15px; margin-bottom:20px;">
-                    <div class="file_input_div">
-                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist image</button>
-                        <input type="file" class="file_input_hidden" id="artist_image"
-                               accept="image/gif, image/jpeg, image/png">
+                    <div class="file-div file-image" id="input_artist_image_div">
+                        <div class="file-input-description file-image" id="upload_artist_image">
+                            <img class="file-input-icon" id="input_artist_image_icon" src="img/upload.png"/>
+                            <br>
+                            <span class="file-input-text"
+                                  id="input_artist_image_text">Drag & drop <b><i>artist image</i></b> or click to browse</span>
+                        </div>
+                        <input class="file-input file-image" id="input_artist_image" multiple="multiple" name="files[]"
+                               type="file" accept="image/*"/>
+                    </div>
+                    <div id="upload_artist_image_preview_div">
+                        <img class="file-image" id="upload_artist_image_preview"/>
                     </div>
                 </section>
-                <img id="artisticon" src="img/preview.png" alt="your Artist Icon will be here" class="preview"/>
-                <section class="element"></section>
                 <section class="element" style="margin-top:-15px; margin-bottom:20px;">
-                    <div class="file_input_div">
-                        <button class="mdl-button mdl-js-button mdl-button--raised">Upload artist icon</button>
-                        <input type="file" class="file_input_hidden" id="artist_icon"
-                               accept="image/gif, image/jpeg, image/png">
+                    <div class="file-div file-image" id="input_artist_icon_div">
+                        <div class="file-input-description file-image" id="upload_artist_icon">
+                            <img class="file-input-icon" id="input_artist_icon_icon" src="img/upload.png"/>
+                            <br>
+                            <span class="file-input-text" id="input_artist_icon_text">Drag & drop <b><i>artist icon</i></b> or click to browse</span>
+                        </div>
+                        <input class="file-input file-image" id="input_artist_icon" multiple="multiple" name="files[]"
+                               type="file" accept="image/png, image/ico"/>
+                    </div>
+                    <div id="upload_artist_icon_preview_div">
+                        <img class="file-image" id="upload_artist_icon_preview"/>
                     </div>
                 </section>
                 <section class="element">
@@ -311,7 +414,7 @@
             </div>
         </section>
     </div>
-    <div id="contact_card" class="card">
+    <div id="about_card" class="card">
         <section class="tab">
             <div class="title">Artist details</div>
             <div class="content" style="margin-top:35px;">
@@ -379,10 +482,4 @@
     </div>
 </main>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="jszip-utils.js"></script>
-<script src="jszip.js"></script>
-<script src="FileSaver.js"></script>
-<script src="index.js"></script>
-
 </html>
