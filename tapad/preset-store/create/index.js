@@ -1,8 +1,3 @@
-var sound_count;
-var audiofolder = 0;
-var chdimg1 = 0, chdimg2 = 0, chdimg3 = 0;
-var imglink = [];
-
 var json;
 
 var inputSounds = [];
@@ -453,65 +448,5 @@ function isTutorialAvailable() {
         return false;
     } else {
         return true;
-    }
-}
-
-$(function () {
-    $("#album_art").on('change', function () {
-        readURL1(this);
-    });
-});
-
-$(function () {
-    $("#artist_image").on('change', function () {
-        readURL2(this);
-    });
-});
-
-$(function () {
-    $("#artist_icon").on('change', function () {
-        readURL3(this);
-    });
-});
-
-function readURL1(input) {
-    chdimg1 = 1;
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#album').attr('src', e.target.result);
-            imglink.push(e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-function readURL2(input) {
-    chdimg2 = 1;
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#artistimg').attr('src', e.target.result);
-            imglink.push(e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-function readURL3(input) {
-    chdimg3 = 1;
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#artisticon').attr('src', e.target.result);
-            imglink.push(e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
     }
 }
