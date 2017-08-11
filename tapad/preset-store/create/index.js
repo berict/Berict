@@ -197,7 +197,7 @@ function isFormFilled() {
             filled = false;
             // empty, trigger mdl input error
             // seems not working
-            //inputObject.get(0).MaterialTextField.checkDirty();
+            inputObject.focus();
         }
     }
 
@@ -206,9 +206,11 @@ function isFormFilled() {
 
 function createPreset() {
     if (inputSounds == null) {
-        alert("Upload preset sounds");
+        alert("Please upload preset sounds");
     } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
-        alert("Upload all images");
+        alert("Please upload all images");
+    } else if (isFormFilled()) {
+        alert("Please fill out the form");
     } else {
         // all passed, make preset
         makeJSON(); //make JSON with changed sound_count
@@ -228,7 +230,6 @@ function createPreset() {
 
         if (inputSounds.length == inputSoundFileNames.length) {
             for (var i = 0; i < inputSounds.length; i++) {
-                console.log(inputSoundFileNames[i] + " = " + inputSounds[i]);
                 sounds.file(inputSoundFileNames[i], inputSounds[i]);
             }
         } else {
@@ -303,14 +304,14 @@ function setInput(id, errorFileType, result) {
                 if (sound.type.match('audio.*')) {
                     audioCount++;
                     // quickfix, but it works
-                    inputSoundFileNames.push(sound.name); // push filename
-
                     var reader = new FileReader();
 
                     // Closure to capture the file information
                     reader.onload = (function (file) {
                         return function (e) {
                             // return results, to array buffer
+                            console.log(file.name);
+                            inputSoundFileNames.push(file.name);
                             audios.push(e.target.result);
                         };
                     })(sound);
