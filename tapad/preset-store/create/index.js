@@ -5,7 +5,8 @@ var imglink = [];
 
 var json;
 
-var inputSounds;
+var inputSounds = [];
+var inputSoundFileNames = [];
 var inputAlbumArt;
 var inputArtistImage;
 var inputArtistIcon;
@@ -33,7 +34,7 @@ function makeJSON() {
                 "text": $("#bio_text").val(),
                 "title": $("#song_artist").val() + "\u0027s biography"
             },
-            "color": $("#song_theme_color").val(),
+            "color": $("#about_color").val(),
             "details": [
                 {
                     "items": [
@@ -59,7 +60,7 @@ function makeJSON() {
                             "text_id": "soundcloud"
                         },
                         {
-                            "hint": $("#artist_insta").val(),
+                            "hint": $("#artist_instagram").val(),
                             "hint_is_visible": true,
                             "image_id": "instagram",
                             "runnable_is_with_anim": false,
@@ -113,7 +114,7 @@ function makeJSON() {
                             "text_id": "spotify"
                         },
                         {
-                            "hint": $("#story_googleplay").val(),
+                            "hint": $("#store_google_play").val(),
                             "hint_is_visible": true,
                             "image_id": "google_play_music",
                             "runnable_is_with_anim": false,
@@ -145,63 +146,100 @@ function makeJSON() {
                 }
             ],
             "isTutorialAvailable": isTutorialAvailable(),
-            "presetArtist": $("#song_preset_creator").val(),
+            "presetArtist": $("#about_preset_artist").val(),
             "songArtist": $("#song_artist").val(),
             "songName": $("#song_name").val()
         },
         "bpm": $("#bpm").val(),
         "isGesture": isGesturePreset(),
-        "soundCount": -1,
+        "soundCount": soundCount,
         "tag": "CUSTOM_INPUT"
     };
     //change object into String
     json = JSON.stringify(jsonString);
 }
 
-function createPreset() {
-    console.log(inputArtistIcon.name);
-    if (audiofolder == 0) {
-        alert("Please upload sound files")
-    }
-    else if (chdimg1 == 0 || chdimg2 == 0 || chdimg3 == 0) {
-        alert("Please upload all files.");
-    }
-    else if ($("#song_bpm").val() == "" || $("#song_tutorial_link").val() == "" || $("#song_title").val() == "" || $("#song_preset_creator").val() == "" || $("#store_pandora").val() == "" || $("#store_amazon").val() == "" || $("#store_apple").val() == "" || $("#story_googleplay").val() == "" || $("#store_spotify").val() == "" || $("#store_youtube").val() == "" || $("#store_soundcloud").val() == "" || $("#song_artist").val() == "" || $("#artist_web").val() == "" || $("#artist_youtube").val() == "" || $("#artist_google").val() == "" || $("#artist_insta").val() == "" || $("#artist_soundcloud").val() == "" || $("#artist_twitter").val() == "" || $("#artist_facebook").val() == "" ||
-        $("#song_artist").val() == "" || $("#bio_text").val() == "" || $("#bio_source").val() == "" || $("#bio_name").val() == "" || $("#song_theme_color").val() == "") {
-        alert("Please fill out all information.");
-    }
-    else {
-        //if create button clicked
-        var reader = new FileReader();
-        sound_count = document.getElementById("upload_sounds").files.length;
-        makeJSON(); //make JSON with changed sound_count
-        alert(sound_count); //test for sound_count
-        var zip = new JSZip(); //make zip file
-        var about = zip.folder("about");
-        var sounds = zip.folder("sounds");
-        var timing = zip.folder("timing");
-        about.file("json", json); //create JSON.txt
-        var pattern = /.+,/g;
-        for (var i = 0; i < imglink.length; i++) {
-            var replace = imglink[i].replace(pattern, "");
-            var fileName;
-            switch (i) {
-                case 0:
-                    fileName = "album_art";
-                    break;
-                case 1:
-                    fileName = "artist_image";
-                    break;
-                case 2:
-                    fileName = "artist_icon";
-                    break;
-            }
-            about.file(fileName, replace, {base64: true});
+function isFormFilled() {
+    var inputs = [
+        "song_name",
+        "song_artist",
+        "about_color",
+        "about_preset_artist",
+        "bpm",
+        "bio_text",
+        "bio_name",
+        "bio_source"
+    ];
+
+    var optionalInputs = [
+        "about_tutorial_video_link",
+        "store_pandora",
+        "store_amazon",
+        "store_apple",
+        "store_google_play",
+        "store_spotify",
+        "store_youtube",
+        "store_soundcloud",
+        "artist_web",
+        "artist_youtube",
+        "artist_google",
+        "artist_instagram",
+        "artist_soundcloud",
+        "artist_twitter",
+        "artist_facebook"
+    ];
+
+    var filled = true;
+
+    for (var input in inputs) {
+        var inputObject = $("#" + input);
+        if (inputObject.val() == null) {
+            filled = false;
+            // empty, trigger mdl input error
+            // seems not working
+            //inputObject.get(0).MaterialTextField.checkDirty();
         }
+    }
+
+    return filled;
+}
+
+function createPreset() {
+    if (inputSounds == null) {
+        alert("Upload preset sounds");
+    } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
+        alert("Upload all images");
+    } else {
+        // all passed, make preset
+        makeJSON(); //make JSON with changed sound_count
+
+        var zip = new JSZip(); //make zip file
+
+        var preset = zip.folder("preset");
+
+        var about = preset.folder("about");
+        var sounds = preset.folder("sounds");
+        var timing = preset.folder("timing");
+
+        about.file("json", json);
+        about.file("album_art", inputAlbumArt, {base64: true});
+        about.file("artist_image", inputArtistImage, {base64: true});
+        about.file("artist_icon", inputArtistIcon, {base64: true});
+
+        if (inputSounds.length == inputSoundFileNames.length) {
+            for (var i = 0; i < inputSounds.length; i++) {
+                console.log(inputSoundFileNames[i] + " = " + inputSounds[i]);
+                sounds.file(inputSoundFileNames[i], inputSounds[i]);
+            }
+        } else {
+            console.error("Error on load counts");
+        }
+
         zip.generateAsync({type: "blob"})
             .then(function (content) {
-                saveAs(content, "preset.zip"); //save zip file
-            });
+                    saveAs(content, "preset.zip"); //save zip file
+                }
+            );
     }
 }
 
@@ -216,7 +254,8 @@ function clearInput(id, result) {
             $(this).hide();
         });
         $("#input_" + id + "_div").fadeIn(200);
-        soundCount = 0;
+        inputSoundFileNames = null;
+        inputSounds = null;
     } else {
         // clear image
         $("#upload_" + id + "_preview_div").fadeOut(200, function () {
@@ -256,16 +295,29 @@ function setInput(id, errorFileType, result) {
             // handle sound select
             var files = evt.target.files; // FileList object
             var audios = [];
-
-            if (files.length > 0) {
-                // success opening
-            }
+            var audioCount = 0;
 
             // Loop through the FileList and print file names to the list
-            for (var i = 0, f; f = files[i]; i++) {
+            for (var i = 0, sound; sound = files[i]; i++) {
                 // Only process audio files
-                if (f.type.match('audio.*')) {
-                    audios.push(f);
+                if (sound.type.match('audio.*')) {
+                    audioCount++;
+                    // quickfix, but it works
+                    inputSoundFileNames.push(sound.name); // push filename
+
+                    var reader = new FileReader();
+
+                    // Closure to capture the file information
+                    reader.onload = (function (file) {
+                        return function (e) {
+                            // return results, to array buffer
+                            audios.push(e.target.result);
+                        };
+                    })(sound);
+
+                    // Read in the image file as a array buffer
+                    reader.readAsArrayBuffer(sound);
+
                     var list = $("#upload_sounds_list");
                     if ($("#input_sounds_div").is(":visible")) {
                         $("#input_sounds_div").fadeOut(200, function () {
@@ -273,9 +325,9 @@ function setInput(id, errorFileType, result) {
                         });
                         list.show();
                     }
-                    if (audios.length < 25) {
-                        $(getFileElement(f.name)).hide().appendTo(list).delay(200 + 10 * i).fadeIn(100);
-                    } else if (audios.length == 25) {
+                    if (audioCount < 25) {
+                        $(getFileElement(sound.name)).hide().appendTo(list).delay(200 + 10 * i).fadeIn(100);
+                    } else if (audioCount == 25) {
                         // stop at 25
                         $(getFileElement("... total " + files.length + " items added"))
                             .hide().appendTo(list)
@@ -285,17 +337,17 @@ function setInput(id, errorFileType, result) {
                             .hide().appendTo(list)
                             .delay(300 + 5 * i).fadeIn(100);
                     } else {
-                        if (audios.length > 0) {
+                        if (audioCount > 0) {
                             $(clear)
                                 .hide().appendTo(list)
                                 .delay(300 + 5 * i).fadeIn(100);
                         }
-                        break;
                     }
                 }
             }
+            console.log("soundCount = " + soundCount);
 
-            if (audios.length == 0) {
+            if (audioCount == 0) {
                 // no audio inputs
                 $("#input_" + id + "_div").css({
                     // red error
@@ -314,6 +366,7 @@ function setInput(id, errorFileType, result) {
                 input.val("");
                 input.replaceWith(input = input.clone(true));
             } else {
+                soundCount = audioCount;
                 // return results
                 window[result] = audios;
             }
@@ -326,9 +379,6 @@ function setInput(id, errorFileType, result) {
 
             if (image.type.match("image/*")) {
                 var reader = new FileReader();
-
-                // return results
-                window[result] = image;
 
                 // Closure to capture the file information.
                 reader.onload = (function (file) {
@@ -343,6 +393,9 @@ function setInput(id, errorFileType, result) {
                         $(clear)
                             .hide().appendTo(document.getElementById("upload_" + id + "_preview_div"))
                             .delay(200).fadeIn(200);
+
+                        // return results, encoded with jsZip-compatible base64
+                        window[result] = (e.target.result).replace(/.+,/g, "");
                     };
                 })(image);
 
@@ -394,7 +447,7 @@ function isGesturePreset() {
 }
 
 function isTutorialAvailable() {
-    var type = $("#song_tutorial_link").val();
+    var type = $("#about_tutorial_video_link").val();
     if (type == null || type.length == 0) {
         return false;
     } else {
