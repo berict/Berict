@@ -292,6 +292,7 @@ function setInput(id, errorFileType, result) {
             var files = evt.target.files; // FileList object
             var audios = [];
             var audioCount = 0;
+            var list = $("#upload_sounds_list");
 
             // Loop through the FileList and print file names to the list
             for (var i = 0, sound; sound = files[i]; i++) {
@@ -305,7 +306,6 @@ function setInput(id, errorFileType, result) {
                     reader.onload = (function (file) {
                         return function (e) {
                             // return results, to array buffer
-                            console.log(file.name);
                             inputSoundFileNames.push(file.name);
                             audios.push(e.target.result);
                         };
@@ -313,8 +313,6 @@ function setInput(id, errorFileType, result) {
 
                     // Read in the image file as a array buffer
                     reader.readAsArrayBuffer(sound);
-
-                    var list = $("#upload_sounds_list");
                     if ($("#input_sounds_div").is(":visible")) {
                         $("#input_sounds_div").fadeOut(200, function () {
                             $(this).hide();
@@ -328,20 +326,16 @@ function setInput(id, errorFileType, result) {
                         $(getFileElement("... total " + files.length + " items added"))
                             .hide().appendTo(list)
                             .delay(200 + 5 * i).fadeIn(100);
-                        // insert clear button
-                        $(clear)
-                            .hide().appendTo(list)
-                            .delay(300 + 5 * i).fadeIn(100);
-                    } else {
-                        if (audioCount > 0) {
-                            $(clear)
-                                .hide().appendTo(list)
-                                .delay(300 + 5 * i).fadeIn(100);
-                        }
                     }
                 }
             }
-            console.log("soundCount = " + soundCount);
+
+            if (audioCount > 0) {
+                // insert clear button
+                $(clear)
+                    .hide().appendTo(list)
+                    .delay(300 + 5 * soundCount).fadeIn(100);
+            }
 
             if (audioCount == 0) {
                 // no audio inputs
