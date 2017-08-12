@@ -171,6 +171,43 @@
         .file-image.file-input-description {
             padding-top: 40px;
         }
+
+        .mdl-textfield {
+            margin-bottom: 4px;
+        }
+
+        .detail-icon-button {
+            width: 50px;
+            height: auto;
+            margin-top: 0;
+            padding: 0;
+            margin-right: 2px;
+            display: inline;
+        }
+
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+            margin-bottom: -10px;
+            opacity: 0.8;
+        }
+
+        .detail-icon-text {
+            padding: 0;
+            text-transform: capitalize;
+            color: #2196F3;
+            opacity: 0.8;
+            font-size: 10px;
+        }
+
+        .input_close {
+            display: inline;
+            margin-top: 0;
+            margin-right: 0;
+            margin-left: 8px;
+            margin-bottom: 0;
+        }
     </style>
     <script src="../index.js"></script>
 </head>
@@ -224,18 +261,9 @@
                         </div>
                     </form>
                 </section>
-                <section class="element">
-                    <form>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="about_preset_artist" autocomplete="off">
-                            <label class="mdl-textfield__label" for="about_preset_artist">Preset creator</label>
-                        </div>
-                    </form>
-                </section>
                 <section class="element" style="margin-top:-35px; margin-bottom:15px;">
                     <div class="info">
-                        <button id="dropdown-preset-type"
-                                class="mdl-button ">
+                        <button id="dropdown-preset-type" class="mdl-button">
                             Select preset type
                         </button>
                         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
@@ -248,29 +276,8 @@
                 <section class="element">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="about_color" autocomplete="off">
-                            <label class="mdl-textfield__label" for="about_color">Theme color</label>
-                        </div>
-                    </form>
-                </section>
-                <section class="element">
-                    <form>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="about_tutorial_video_link"
-                                   pattern="\0" autocomplete="off">
-                            <label class="mdl-textfield__label" for="about_tutorial_video_link">Tutorial video
-                                link</label>
-                            <span class="mdl-textfield__error">Input should be a YouTube video link</span>
-                        </div>
-                    </form>
-                </section>
-                <section class="element">
-                    <form>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="bpm" pattern="-?[0-9]*(\.[0-9]+)?"
-                                   autocomplete="off">
-                            <label class="mdl-textfield__label" for="bpm">BPM</label>
-                            <span class="mdl-textfield__error">Input should be a number</span>
+                            <input class="mdl-textfield__input" type="text" id="about_preset_artist" autocomplete="off">
+                            <label class="mdl-textfield__label" for="about_preset_artist">Preset creator</label>
                         </div>
                     </form>
                 </section>
@@ -289,67 +296,156 @@
                         <img class="file-image" id="upload_album_art_preview"/>
                     </div>
                 </section>
+                <section class="element">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="about_color" autocomplete="off">
+                            <label class="mdl-textfield__label" for="about_color">Theme color</label>
+                        </div>
+                    </form>
+                </section>
+                <section class="element">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="bpm" pattern="-?[0-9]*(\.[0-9]+)?"
+                                   autocomplete="off">
+                            <label class="mdl-textfield__label" for="bpm">BPM</label>
+                            <span class="mdl-textfield__error">Input should be a number</span>
+                        </div>
+                    </form>
+                </section>
+                <section class="element">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="about_tutorial_video_link"
+                                   pattern="(?:youtube.com\/watch?\?v=.+|youtu.be.+)" autocomplete="off">
+                            <label class="mdl-textfield__label" for="about_tutorial_video_link">Tutorial video
+                                link (optional)</label>
+                            <span class="mdl-textfield__error">Input should be a YouTube video link</span>
+                        </div>
+                    </form>
+                </section>
             </div>
         </section>
     </div>
     <div id="about_card" class="card">
         <section class="tab">
-            <div class="title">Song store details</div>
-            <div class="content" style="margin-top:35px;">
-                <section class="element">
+            <div class="title">Song store details (optional)</div>
+            <div class="content" style="margin-top:20px;">
+                <section class="element" style="padding-top: 0; padding-bottom: 10px">
+                    <div>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_youtube" class="detail-icon" src="img/youtube.png">
+                            <span class="detail-icon-text">YouTube</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_soundcloud" class="detail-icon" src="img/soundcloud.png">
+                            <span class="detail-icon-text">SoundCloud</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_spotify" class="detail-icon" src="img/spotify.png">
+                            <span class="detail-icon-text">Spotify</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_google_play" class="detail-icon" src="img/google-play-music.png">
+                            <span class="detail-icon-text">Play Music</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_apple" class="detail-icon" src="img/apple.png">
+                            <span class="detail-icon-text">Apple Music</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_amazon" class="detail-icon" src="img/amazon.png">
+                            <span class="detail-icon-text">Amazon</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
+                            <img id="detail_icon_pandora" class="detail-icon" src="img/pandora.png">
+                            <span class="detail-icon-text">Pandora</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_youtube" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_youtube">YouTube</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_soundcloud" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_soundcloud">SoundCloud</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_spotify" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_spotify">Spotify</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="store_googleplay" autocomplete="off">
-                            <label class="mdl-textfield__label" for="store_googleplay">Google Play Music</label>
+                            <input class="mdl-textfield__input" type="text" id="store_google_play" autocomplete="off">
+                            <label class="mdl-textfield__label" for="store_google_play">Google Play Music</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_apple" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_apple">Apple Music</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_amazon" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_amazon">Amazon Music</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_pandora" autocomplete="off">
                             <label class="mdl-textfield__label" for="store_pandora">Pandora Music</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
             </div>
@@ -417,62 +513,122 @@
     </div>
     <div id="about_card" class="card">
         <section class="tab">
-            <div class="title">Artist details</div>
-            <div class="content" style="margin-top:35px;">
-                <section class="element">
+            <div class="title">Artist details (optional)</div>
+            <div class="content" style="margin-top:20px;">
+                <section class="element" style="padding-top: 0; padding-bottom: 10px">
+                    <div>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_facebook" class="detail-icon" src="img/facebook.png">
+                            <span class="detail-icon-text">Facebook</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_twitter" class="detail-icon" src="img/twitter.png">
+                            <span class="detail-icon-text">Twitter</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_soundcloud" class="detail-icon" src="img/soundcloud.png">
+                            <span class="detail-icon-text">SoundCloud</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_instagram" class="detail-icon" src="img/instagram.png">
+                            <span class="detail-icon-text">Instagram</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_google_plus" class="detail-icon" src="img/google-plus.png">
+                            <span class="detail-icon-text">Google Plus</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_youtube" class="detail-icon" src="img/youtube.png">
+                            <span class="detail-icon-text">YouTube</span>
+                        </button>
+                        <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
+                            <img id="detail_icon_web" class="detail-icon" src="img/web.png">
+                            <span class="detail-icon-text">Web</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_facebook" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_facebook">Facebook</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_twitter" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_twitter">Twitter</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_soundcloud" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_soundcloud">Soundcloud</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_instagram" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_instagram">Instagram</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="artist_google" autocomplete="off">
-                            <label class="mdl-textfield__label" for="artist_google">Google Plus</label>
+                            <input class="mdl-textfield__input" type="text" id="artist_google_plus" autocomplete="off">
+                            <label class="mdl-textfield__label" for="artist_google_plus">Google Plus</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_youtube" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_youtube">YouTube</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="display: none;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_web" autocomplete="off">
                             <label class="mdl-textfield__label" for="artist_web">Webpage</label>
                         </div>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--icon input_close"
+                                onclick="hideInput(this)">
+                            <i class="material-icons">close</i>
+                        </button>
                     </form>
                 </section>
             </div>

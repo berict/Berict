@@ -62,7 +62,7 @@ function makeJSON() {
                             "text_id": "instagram"
                         },
                         {
-                            "hint": $("#artist_google").val(),
+                            "hint": $("#artist_google_plus").val(),
                             "hint_is_visible": true,
                             "image_id": "google_plus",
                             "runnable_is_with_anim": false,
@@ -177,7 +177,7 @@ function isFormFilled() {
         "store_soundcloud",
         "artist_web",
         "artist_youtube",
-        "artist_google",
+        "artist_google_plus",
         "artist_instagram",
         "artist_soundcloud",
         "artist_twitter",
@@ -442,5 +442,19 @@ function isTutorialAvailable() {
         return false;
     } else {
         return true;
+    }
+}
+
+function hideInput(element) {
+    $(element).parent().parent().fadeOut(200, function () {
+        $(this).hide();
+    });
+}
+
+function showInput(element, prefix) {
+    var elementId = $(element).find("img").attr("id");
+    var input = $("#" + elementId.replace("detail_icon", prefix)).parent().parent().parent();
+    if (input.css("display") == "none") {
+        input.hide().fadeIn(200);
     }
 }
