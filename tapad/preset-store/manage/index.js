@@ -1,6 +1,8 @@
 function parseGitHub() {
     document.getElementById("version_code").focus();
-    document.getElementById("version_code").value = getLatestRelease();
+    var versionCode = $("#version_code");
+    versionCode.val(getLatestRelease());
+    versionCode.parent().addClass("is-dirty");
 }
 
 function getLatestRelease() {
