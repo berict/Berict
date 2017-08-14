@@ -168,7 +168,7 @@
             margin-top: 12px;
         }
 
-        .file-image.file-input-description {
+        .file-image .file-input-description {
             padding-top: 40px;
         }
 
@@ -208,6 +208,60 @@
             margin-left: 8px;
             margin-bottom: 0;
         }
+
+        .deck {
+            width: 60px;
+            height: 30px;
+            border: 1px solid white;
+            color: white;
+            background-color: #9E9E9E;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .pad {
+            width: 60px;
+            height: 60px;
+            border: 1px solid white;
+            background-color: #9E9E9E;
+        }
+
+        .pad-small {
+            width: 30px;
+            height: 30px;
+        }
+
+        .pattern {
+            width: 30px;
+            height: 60px;
+            border: 1px solid white;
+            color: white;
+            background-color: #9E9E9E;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .pad .gesture {
+            width: 20px;
+            height: 20px;
+            border-top: 14px solid #9E9E9E;
+            border-bottom: 14px solid #9E9E9E;
+            border-left: 14px solid #9E9E9E;
+            border-right: 14px solid #9E9E9E;
+            padding: 15px;
+            background-color: #9E9E9E;
+        }
+
+        .pad-small .gesture {
+            width: 10px;
+            height: 10px;
+            border-top: 7px solid #9E9E9E;
+            border-bottom: 7px solid #9E9E9E;
+            border-left: 7px solid #9E9E9E;
+            border-right: 7px solid #9E9E9E;
+            padding: 7px;
+            background-color: #9E9E9E;
+        }
     </style>
     <script src="../index.js"></script>
 </head>
@@ -237,6 +291,79 @@
                     <div id="upload_sounds_list">
                         <!-- File list -->
                     </div>
+                </section>
+                <section class="element" id="input_sounds_pad" style="margin-bottom:20px;">
+                    <table>
+                        <tr>
+                            <td class="deck" id="deck_1" onclick="setDeck(1)">1</td>
+                            <td class="deck" id="deck_2" onclick="setDeck(2)">2</td>
+                            <td class="deck" id="deck_3" onclick="setDeck(3)">3</td>
+                            <td class="deck" id="deck_4" onclick="setDeck(4)">4</td>
+                            <td class="pad pad-small" id="pad_00">
+                                <div class="gesture"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_11">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_12">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_13">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_14">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pattern">1</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_21">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_22">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_23">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_24">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pattern">2</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_31">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_32">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_33">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_34">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pattern">3</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_41">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_42">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_43">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pad" id="pad_44">
+                                <div class="gesture"></div>
+                            </td>
+                            <td class="pattern">4</td>
+                        </tr>
+                    </table>
                 </section>
             </div>
         </section>

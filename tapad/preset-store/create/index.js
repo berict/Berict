@@ -8,6 +8,8 @@ var inputArtistIcon;
 
 var soundCount = 0;
 
+var sound;
+
 zip = new JSZip();
 
 $(document).ready(
@@ -17,6 +19,8 @@ $(document).ready(
         setInput("album_art", "image", "inputAlbumArt");
         setInput("artist_image", "image", "inputArtistImage");
         setInput("artist_icon", "png / ico", "inputArtistIcon");
+
+        initializeArray();
     }
 );
 
@@ -199,14 +203,192 @@ function isFormFilled() {
     return filled;
 }
 
+function initializeArray() {
+    var deckArray = [];
+    for (var i = 1; i <= 4; i++) {
+        var padArray = [];
+        for (var j = 0; j < 17; j++) {
+            var gestureArray = [];
+            for (var k = 0; k < 5; k++) {
+                if (k == 0) {
+                    console.log("sound_" + i + "_" + getPadStringFromIndex(j))
+                } else {
+                    console.log("sound_" + i + "_" + getPadStringFromIndex(j) + "_" + k);
+                }
+                gestureArray.push("");
+            }
+            padArray.push(gestureArray);
+        }
+        deckArray.push(padArray);
+    }
+    sound = deckArray;
+}
+
+function pushSound(deck, pad, gesture, val) {
+    console.log(deck + " - " + pad + " - " + gesture + ", added as " + val);
+    sound[parseInt(deck) - 1][parseInt(pad)][parseInt(gesture)] = val;
+}
+
+function addSound(fileName) {
+    if (fileName.length == 6) {
+        // with gesture
+        var number = fileName.match(/\d+/g); // returns a regex matching array
+        pushSound(number[0], getPadIndexFromString(number[1]), number[2], fileName);
+    } else if (fileName.length == 4) {
+        // without gesture
+        var number = fileName.match(/\d+/g); // returns a regex matching array
+        pushSound(number[0], getPadIndexFromString(number[1]), "0", fileName);
+    } else {
+        console.error("Error on fileName, string length is " + fileName.length);
+    }
+}
+
+function getPadStringFromIndex(padIndex) {
+    switch (padIndex) {
+        case 0:
+            return "00";
+        case 1:
+            return "11";
+        case 2:
+            return "12";
+        case 3:
+            return "13";
+        case 4:
+            return "14";
+        case 5:
+            return "21";
+        case 6:
+            return "22";
+        case 7:
+            return "23";
+        case 8:
+            return "24";
+        case 9:
+            return "31";
+        case 10:
+            return "32";
+        case 11:
+            return "33";
+        case 12:
+            return "34";
+        case 13:
+            return "41";
+        case 14:
+            return "42";
+        case 15:
+            return "43";
+        case 16:
+            return "44";
+        default:
+            return null;
+    }
+}
+
+function getPadIndexFromString(padString) {
+    switch (padString) {
+        case "00":
+            return 0;
+        case "11":
+            return 1;
+        case "12":
+            return 2;
+        case "13":
+            return 3;
+        case "14":
+            return 4;
+        case "21":
+            return 5;
+        case "22":
+            return 6;
+        case "23":
+            return 7;
+        case "24":
+            return 8;
+        case "31":
+            return 9;
+        case "32":
+            return 10;
+        case "33":
+            return 11;
+        case "34":
+            return 12;
+        case "41":
+            return 13;
+        case "42":
+            return 14;
+        case "43":
+            return 15;
+        case "44":
+            return 16;
+        default:
+            return -1;
+    }
+}
+
+function setDeck(index) {
+    for (var deck = 1; deck <= 4; deck++) {
+        if (deck == index) {
+            // selected
+            $("#deck_" + deck).css("background-color", "#2196F3");
+        } else {
+            // color reset
+            $("#deck_" + deck).css("background-color", "#9E9E9E");
+        }
+    }
+
+    for (var i = 0; i < 17; i++) {
+        setGesture(getPadStringFromIndex(i), -1);
+        for (var j = 0; j < 5; j++) {
+            if (sound[index - 1][i][j].length > 0) {
+                setGesture(getPadStringFromIndex(i), j);
+            }
+        }
+    }
+}
+
+function setGesture(pad, gesture) {
+    console.log(pad + " - " + gesture);
+    var obj = $("#pad_" + pad).find(".gesture");
+    // colors the padding
+    switch (gesture) {
+        case -1:
+            // clear
+            obj.css("background-color", obj.css("background-color").replace(/rgb[^/]+/g, "#9E9E9E"));
+            obj.css("border-top", obj.css("border-top").replace(/rgb[^/]+/g, "#9E9E9E"));
+            obj.css("border-right", obj.css("border-right").replace(/rgb[^/]+/g, "#9E9E9E"));
+            obj.css("border-bottom", obj.css("border-bottom").replace(/rgb[^/]+/g, "#9E9E9E"));
+            obj.css("border-left", obj.css("border-left").replace(/rgb[^/]+/g, "#9E9E9E"));
+            break;
+        case 0:
+            obj.css("background-color", obj.css("background-color").replace(/rgb[^/]+/g, "#1E88E5"));
+            break;
+        case 1:
+            obj.css("border-top", obj.css("border-top").replace(/rgb[^/]+/g, "#1976D2"));
+            break;
+        case 2:
+            obj.css("border-right", obj.css("border-right").replace(/rgb[^/]+/g, "#1976D2"));
+            break;
+        case 3:
+            obj.css("border-bottom", obj.css("border-bottom").replace(/rgb[^/]+/g, "#1976D2"));
+            break;
+        case 4:
+            obj.css("border-left", obj.css("border-left").replace(/rgb[^/]+/g, "#1976D2"));
+            break;
+        case undefined:
+            console.error("Error on gesture index");
+            break;
+    }
+}
+
 function createPreset() {
+    // TODO input validated before server push
     if (inputSounds == null) {
         alert("Please upload preset sounds");
-    } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
+    } /*else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
         alert("Please upload all images");
     } else if (isFormFilled()) {
         alert("Please fill out the form");
-    } else {
+    }*/ else {
         // all passed, make preset
         makeJSON(); //make JSON with changed sound_count
 
@@ -225,7 +407,7 @@ function createPreset() {
 
         if (inputSounds.length == inputSoundFileNames.length) {
             for (var i = 0; i < inputSounds.length; i++) {
-                sounds.file(inputSoundFileNames[i], inputSounds[i]);
+                sounds.file("sound_" + inputSoundFileNames[i], inputSounds[i]);
             }
         } else {
             console.error("Error on load counts");
@@ -250,8 +432,8 @@ function clearInput(id, result) {
             $(this).hide();
         });
         $("#input_" + id + "_div").fadeIn(200);
-        inputSoundFileNames = null;
-        inputSounds = null;
+        inputSoundFileNames = [];
+        inputSounds = [];
     } else {
         // clear image
         $("#upload_" + id + "_preview_div").fadeOut(200, function () {
@@ -306,7 +488,11 @@ function setInput(id, errorFileType, result) {
                     reader.onload = (function (file) {
                         return function (e) {
                             // return results, to array buffer
-                            inputSoundFileNames.push(file.name);
+                            var fileName = file.name
+                                .substring(0, file.name.lastIndexOf("."))
+                                .match(/(\d_\d+_\d|\d_\d+)/)[0];
+                            addSound(fileName);
+                            inputSoundFileNames.push(fileName);
                             audios.push(e.target.result);
                         };
                     })(sound);
@@ -429,11 +615,7 @@ function setDropDownMenu(string) {
 
 function isGesturePreset() {
     var type = $("#dropdown-preset-type").val();
-    if (type === "GESTURE PRESET") {
-        return true;
-    } else {
-        return false;
-    }
+    return type === "GESTURE PRESET";
 }
 
 function isTutorialAvailable() {
