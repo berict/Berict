@@ -210,11 +210,6 @@ function initializeArray() {
         for (var j = 0; j < 17; j++) {
             var gestureArray = [];
             for (var k = 0; k < 5; k++) {
-                if (k == 0) {
-                    console.log("sound_" + i + "_" + getPadStringFromIndex(j))
-                } else {
-                    console.log("sound_" + i + "_" + getPadStringFromIndex(j) + "_" + k);
-                }
                 gestureArray.push("");
             }
             padArray.push(gestureArray);
@@ -326,21 +321,30 @@ function getPadIndexFromString(padString) {
 }
 
 function setDeck(index) {
-    for (var deck = 1; deck <= 4; deck++) {
-        if (deck == index) {
-            // selected
-            $("#deck_" + deck).css("background-color", "#2196F3");
-        } else {
-            // color reset
-            $("#deck_" + deck).css("background-color", "#9E9E9E");
+    var currentDeck = $("#deck_" + index);
+    if (currentDeck.css("background-color") === "rgb(33, 150, 243)") {
+        // was already selected
+        currentDeck.css("background-color", "#9E9E9E");
+        for (var k = 0; k < 17; k++) {
+            setGesture(getPadStringFromIndex(k), -1);
         }
-    }
+    } else {
+        for (var deck = 1; deck <= 4; deck++) {
+            if (deck == index) {
+                // selected
+                $("#deck_" + deck).css("background-color", "#2196F3");
+            } else {
+                // color reset
+                $("#deck_" + deck).css("background-color", "#9E9E9E");
+            }
+        }
 
-    for (var i = 0; i < 17; i++) {
-        setGesture(getPadStringFromIndex(i), -1);
-        for (var j = 0; j < 5; j++) {
-            if (sound[index - 1][i][j].length > 0) {
-                setGesture(getPadStringFromIndex(i), j);
+        for (var i = 0; i < 17; i++) {
+            setGesture(getPadStringFromIndex(i), -1);
+            for (var j = 0; j < 5; j++) {
+                if (sound[index - 1][i][j].length > 0) {
+                    setGesture(getPadStringFromIndex(i), j);
+                }
             }
         }
     }
