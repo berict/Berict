@@ -374,7 +374,7 @@ function setGesture(pad, gesture) {
             obj.css("border-right", obj.css("border-right").replace(/rgb[^/]+/g, "#9E9E9E"));
             obj.css("border-bottom", obj.css("border-bottom").replace(/rgb[^/]+/g, "#9E9E9E"));
             obj.css("border-left", obj.css("border-left").replace(/rgb[^/]+/g, "#9E9E9E"));
-            tooltip.text("No sounds loaded");
+            tooltip.text("No sound loaded");
             break;
         case 0:
             obj.css("background-color", obj.css("background-color").replace(/rgb[^/]+/g, "#1E88E5"));
@@ -405,7 +405,7 @@ function setGesture(pad, gesture) {
 function appendTooltipText(object, value) {
     var obj = $(object);
     var text = obj.text();
-    if (text === "No sounds loaded") {
+    if (text === "No sound loaded") {
         obj.text(value);
     } else {
         obj.text(text + ", " + value);
@@ -679,5 +679,16 @@ function showInput(element, prefix) {
     var input = $("#" + elementId.replace("detail_icon", prefix)).parent().parent().parent();
     if (input.css("display") == "none") {
         input.hide().fadeIn(200);
+    }
+}
+
+function showHelp(id) {
+    var help = $("#help_" + id);
+    if (help.is(":visible")) {
+        help.fadeOut(200, function () {
+            $(this).hide();
+        });
+    } else {
+        help.hide().fadeIn(200);
     }
 }
