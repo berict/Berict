@@ -321,29 +321,40 @@ function getPadIndexFromString(padString) {
 }
 
 function setDeck(index) {
-    var currentDeck = $("#deck_" + index);
-    if (currentDeck.css("background-color") === "rgb(33, 150, 243)") {
-        // was already selected
-        currentDeck.css("background-color", "#9E9E9E");
-        for (var k = 0; k < 17; k++) {
-            setGesture(getPadStringFromIndex(k), -1);
+    if (index === -1) {
+        // clear all deck
+        for (var deck = 1; deck <= 4; deck++) {
+            // color reset
+            $("#deck_" + deck).css("background-color", "#9E9E9E");
+        }
+        for (var l = 0; l < 17; l++) {
+            setGesture(getPadStringFromIndex(l), -1);
         }
     } else {
-        for (var deck = 1; deck <= 4; deck++) {
-            if (deck == index) {
-                // selected
-                $("#deck_" + deck).css("background-color", "#2196F3");
-            } else {
-                // color reset
-                $("#deck_" + deck).css("background-color", "#9E9E9E");
+        var currentDeck = $("#deck_" + index);
+        if (currentDeck.css("background-color") === "rgb(33, 150, 243)") {
+            // was already selected
+            currentDeck.css("background-color", "#9E9E9E");
+            for (var k = 0; k < 17; k++) {
+                setGesture(getPadStringFromIndex(k), -1);
             }
-        }
+        } else {
+            for (var deck = 1; deck <= 4; deck++) {
+                if (deck == index) {
+                    // selected
+                    $("#deck_" + deck).css("background-color", "#2196F3");
+                } else {
+                    // color reset
+                    $("#deck_" + deck).css("background-color", "#9E9E9E");
+                }
+            }
 
-        for (var i = 0; i < 17; i++) {
-            setGesture(getPadStringFromIndex(i), -1);
-            for (var j = 0; j < 5; j++) {
-                if (sound[index - 1][i][j].length > 0) {
-                    setGesture(getPadStringFromIndex(i), j);
+            for (var i = 0; i < 17; i++) {
+                setGesture(getPadStringFromIndex(i), -1);
+                for (var j = 0; j < 5; j++) {
+                    if (sound[index - 1][i][j].length > 0) {
+                        setGesture(getPadStringFromIndex(i), j);
+                    }
                 }
             }
         }
@@ -353,6 +364,7 @@ function setDeck(index) {
 function setGesture(pad, gesture) {
     console.log(pad + " - " + gesture);
     var obj = $("#pad_" + pad).find(".gesture");
+    var tooltip = $("#pad_" + pad).find(".mdl-tooltip");
     // colors the padding
     switch (gesture) {
         case -1:
@@ -362,25 +374,41 @@ function setGesture(pad, gesture) {
             obj.css("border-right", obj.css("border-right").replace(/rgb[^/]+/g, "#9E9E9E"));
             obj.css("border-bottom", obj.css("border-bottom").replace(/rgb[^/]+/g, "#9E9E9E"));
             obj.css("border-left", obj.css("border-left").replace(/rgb[^/]+/g, "#9E9E9E"));
+            tooltip.text("No sounds loaded");
             break;
         case 0:
             obj.css("background-color", obj.css("background-color").replace(/rgb[^/]+/g, "#1E88E5"));
+            appendTooltipText(tooltip, "normal");
             break;
         case 1:
             obj.css("border-top", obj.css("border-top").replace(/rgb[^/]+/g, "#1976D2"));
+            appendTooltipText(tooltip, "top");
             break;
         case 2:
             obj.css("border-right", obj.css("border-right").replace(/rgb[^/]+/g, "#1976D2"));
+            appendTooltipText(tooltip, "right");
             break;
         case 3:
             obj.css("border-bottom", obj.css("border-bottom").replace(/rgb[^/]+/g, "#1976D2"));
+            appendTooltipText(tooltip, "bottom");
             break;
         case 4:
             obj.css("border-left", obj.css("border-left").replace(/rgb[^/]+/g, "#1976D2"));
+            appendTooltipText(tooltip, "left");
             break;
         case undefined:
             console.error("Error on gesture index");
             break;
+    }
+}
+
+function appendTooltipText(object, value) {
+    var obj = $(object);
+    var text = obj.text();
+    if (text === "No sounds loaded") {
+        obj.text(value);
+    } else {
+        obj.text(text + ", " + value);
     }
 }
 
@@ -435,9 +463,15 @@ function clearInput(id, result) {
         $("#upload_" + id + "_list").empty().fadeOut(200, function () {
             $(this).hide();
         });
-        $("#input_" + id + "_div").fadeIn(200);
+        $("#input_sounds_pad").fadeOut(200, function () {
+            $(this).hide();
+            setDeck(-1);
+        });
+        $("#input_" + id + "_div").delay(200).fadeIn(200);
         inputSoundFileNames = [];
         inputSounds = [];
+        // reinitialize array
+        initializeArray();
     } else {
         // clear image
         $("#upload_" + id + "_preview_div").fadeOut(200, function () {
@@ -525,6 +559,9 @@ function setInput(id, errorFileType, result) {
                 $(clear)
                     .hide().appendTo(list)
                     .delay(300 + 5 * soundCount).fadeIn(100);
+                // show pad preview
+                $("#input_sounds_pad")
+                    .hide().delay(400 + 5 * soundCount).fadeIn(200);
             }
 
             if (audioCount == 0) {
