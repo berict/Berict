@@ -1,16 +1,6 @@
 $(document).ready(
     function () {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDo99FSUZZhuqqr_I0domrjzMa6SNVceQI",
-            authDomain: "tapad-4d342.firebaseapp.com",
-            databaseURL: "https://tapad-4d342.firebaseio.com",
-            projectId: "tapad-4d342",
-            storageBucket: "tapad-4d342.appspot.com",
-            messagingSenderId: "942010163958"
-        };
-        firebase.initializeApp(config);
-
+        getPresets();
         setAdapter();
 
         list = document.getElementById("preset_list");
@@ -18,6 +8,7 @@ $(document).ready(
 );
 
 var list;
+var response = "";
 
 function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
     if ($("#progress").is(":visible")) {
@@ -77,37 +68,71 @@ function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, t
     detail.appendChild(download);
     var preset_image = document.createElement("IMG");
     preset_image.className = "preset_image";
-    preset_image.src = "https://firebasestorage.googleapis.com/v0/b/tapad-4d342.appspot.com/o/presets%2F" + tag + "%2Falbum_art.jpg?alt=media";
+    preset_image.src = "http://file.berict.com/tapad/presets/" + tag + "/album_art.jpg";
     preset_image.style = "width: 150px; height: 150px; margin: 5px; float: right;";
     preset.appendChild(preset_image);
     preset.appendChild(detail);
     return preset;
 }
 
-function setAdapter() {
-    var database;
-    firebase.database().ref().once('value').then(function (snapshot) {
-        snapshot.val().presets.forEach(function (child) {
+function getPresets() {
+    var url = "http://api.berict.com/tapad/presets";
+    var xhr = createCORSRequest('GET', url);
+
+    if (!xhr) {
+        alert('CORS not supported');
+        return;
+    }
+
+    // Response handlers.
+    xhr.onload = function () {
+        response = xhr.responseText;
+        setAdapter(response);
+    };
+
+    xhr.onerror = function () {
+        alert('Woops, there was an error making the request.');
+    };
+
+    xhr.send();
+}
+
+function setAdapter(response) {
+    if (response !== undefined) {
+        var presets = JSON.parse(response);
+        for (var i = 0; i < presets.length; i++) {
             addListItem(
-                child.about.songName,
-                child.about.songArtist,
-                child.about.presetArtist,
-                child.isGesture,
-                child.tag,
-                child.about.color
+                presets[i].preset.about.songName,
+                presets[i].preset.about.songArtist,
+                presets[i].preset.about.presetArtist,
+                presets[i].preset.isGesture,
+                presets[i].preset.tag,
+                presets[i].preset.about.color
             );
-        });
-        database = snapshot.val().presets;
-    });
+        }
+    }
+}
+
+// Examples from https://www.html5rocks.com/en/tutorials/cors/
+// Create the XHR object.
+function createCORSRequest(method, url) {
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+        // XHR for Chrome/Firefox/Opera/Safari.
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined") {
+        // XDomainRequest for IE.
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    } else {
+        // CORS not supported.
+        xhr = null;
+    }
+    return xhr;
 }
 
 function downloadPreset(tag) {
-    var file = firebase.storage().ref("presets/" + tag + "/preset.zip");
-    file.getDownloadURL().then(function (url) {
-        window.location.href = url;
-    }).catch(function (error) {
-        console.error(error.message);
-    });
+    window.location.href = "http://file.berict.com/tapad/presets/" + tag + "/preset.zip";
 }
 
 function getTextNode(text) {
