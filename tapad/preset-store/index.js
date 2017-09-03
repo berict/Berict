@@ -113,9 +113,9 @@ function setAdapter(response) {
     }
 }
 
-// Examples from https://www.html5rocks.com/en/tutorials/cors/
-// Create the XHR object.
 function createCORSRequest(method, url) {
+    // Examples from https://www.html5rocks.com/en/tutorials/cors/
+    // Create the XHR object.
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
         // XHR for Chrome/Firefox/Opera/Safari.
