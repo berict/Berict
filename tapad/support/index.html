@@ -59,6 +59,45 @@
         #contact_card a:hover {
             color: #2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
         }
+
+        .help-card {
+            padding: 15px 0 64px !important;
+        }
+
+        .divider {
+            border-bottom: solid 1px rgba(128, 128, 128, 0.5);
+        }
+
+        .title {
+            margin-bottom: 16px;
+        }
+
+        .help-content {
+            border-bottom: solid 1px rgba(128, 128, 128, 0.25);
+            margin-left: 0 !important;
+        }
+
+        .help-content > * {
+            margin-left: 32px;
+        }
+
+        .title {
+            margin-left: 32px;
+        }
+
+        .help-title {
+            font-size: large;
+            margin-top: 8px;
+        }
+
+        .help-list {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .help-item {
+            padding-bottom: 2px;
+        }
     </style>
 </head>
 <body>
@@ -69,14 +108,17 @@
     </div>
 </header>
 <main>
-    <div id="about_card" class="card">
+    <div id="about_card" class="card help-card">
         <section class="tab">
             <div class="title">Welcome to the Tapad Help Center</div>
             <div class="content">
-                <div class="help-list">
-                    <div class="title">Get started with Tapad</div>
-                    <div class="item">How to use Tapad</div>
-                    <div class="item">Change [TODO] settings</div>
+                <div class="divider"></div>
+                <div class="help-content">
+                    <div class="help-title">Get started with Tapad</div>
+                    <div class="help-list">
+                        <div class="help-item">How to use Tapad</div>
+                        <div class="help-item">Change light, theme, and startup settings</div>
+                    </div>
                 </div>
             </div>
         </section>
