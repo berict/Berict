@@ -421,6 +421,103 @@
     </div>
     <div id="about_card" class="card">
         <section class="tab">
+            <div class="title">Preset details
+                <i class="material-icons material-icons-small" onclick="showHelp('input_sounds')">help_outline</i></div>
+            <div class="content" style="margin-top:35px;">
+                <section class="element" style="margin-top:-35px; margin-bottom:15px;">
+                    <div class="info">
+                        <button id="dropdown-preset-difficulty" class="mdl-button">
+                            Select difficulty
+                        </button>
+                    </div>
+                </section>
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                    for="dropdown-preset-difficulty">
+                    <li class="mdl-menu__item"
+                        onclick="setDropDownMenu('dropdown-preset-difficulty', this); setDifficulty(1)">Very easy
+                    </li>
+                    <li class="mdl-menu__item"
+                        onclick="setDropDownMenu('dropdown-preset-difficulty', this); setDifficulty(2)">Easy
+                    </li>
+                    <li class="mdl-menu__item"
+                        onclick="setDropDownMenu('dropdown-preset-difficulty', this); setDifficulty(3)">Normal
+                    </li>
+                    <li class="mdl-menu__item"
+                        onclick="setDropDownMenu('dropdown-preset-difficulty', this); setDifficulty(4)">Hard
+                    </li>
+                    <li class="mdl-menu__item"
+                        onclick="setDropDownMenu('dropdown-preset-difficulty', this); setDifficulty(5)">Very hard
+                    </li>
+                </ul>
+                <section class="element" style="margin-top:-35px; margin-bottom:15px;">
+                    <div class="info">
+                        <button id="dropdown-preset-genre" class="mdl-button">
+                            Select genre
+                        </button>
+                    </div>
+                </section>
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                    for="dropdown-preset-genre">
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Drum and Bass
+                    </li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Hardcore</li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">House</li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Trap</li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Techno</li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Trance</li>
+                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider"
+                        onclick="setDropDownMenu('dropdown-preset-genre', this)">Pop
+                    </li>
+                    <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-genre', this)">Custom</li>
+                </ul>
+                <section class="element" id="preset_genre_custom_section" style="display: none">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="preset_genre_custom" autocomplete="off">
+                            <label class="mdl-textfield__label" for="preset_genre_custom">Genre</label>
+                        </div>
+                    </form>
+                </section>
+                <section class="element">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="preset_description" autocomplete="off">
+                            <label class="mdl-textfield__label" for="preset_description">Description</label>
+                        </div>
+                    </form>
+                </section>
+                <div class="element" style="margin-top:-35px; margin-bottom:15px;">
+                    <div class="info">
+                        <button id="dropdown-preset-type" class="mdl-button">
+                            Select preset type
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                            for="dropdown-preset-type">
+                            <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-type', this)">Gesture
+                                preset
+                            </li>
+                            <li class="mdl-menu__item" onclick="setDropDownMenu('dropdown-preset-type', this)">Normal
+                                preset
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <section class="element">
+                    <form>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="preset_version" autocomplete="off"
+                                   pattern="-?[0-9]*(\.[0-9]+)?">
+                            <label class="mdl-textfield__label" for="preset_version">Version</label>
+                            <span class="mdl-textfield__error">Input should be a number</span>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </div>
+    <div id="about_card" class="card">
+        <section class="tab">
             <div class="title">Song details</div>
             <div class="content" style="margin-top:35px;">
                 <section class="element">
@@ -438,18 +535,6 @@
                             <label class="mdl-textfield__label" for="song_artist">Artist</label>
                         </div>
                     </form>
-                </section>
-                <section class="element" style="margin-top:-35px; margin-bottom:15px;">
-                    <div class="info">
-                        <button id="dropdown-preset-type" class="mdl-button">
-                            Select preset type
-                        </button>
-                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-                            for="dropdown-preset-type">
-                            <li class="mdl-menu__item" onclick="setDropDownMenu('Gesture preset')">Gesture preset</li>
-                            <li class="mdl-menu__item" onclick="setDropDownMenu('Normal preset')">Normal preset</li>
-                        </ul>
-                    </div>
                 </section>
                 <section class="element">
                     <form>
