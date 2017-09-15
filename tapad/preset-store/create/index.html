@@ -289,21 +289,122 @@
 <main>
     <div id="about_card" class="card">
         <section class="tab">
-            <div class="title">Sounds <i class="material-icons material-icons-small" onclick="showHelp('input_sounds')">help_outline</i>
+            <div class="title">How-to</div>
+            <div class="content">
+                <section class="element" style="margin-bottom:20px;">
+                    <div class="help-div" style="display:block;">
+                        <div class="info">
+                            Need help? Visit <a href="/tapad/support">the help page</a>.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="tab" id="input_sounds_pad" style="display: none;">
+            <div class="title">Preset visualizer</div>
+            <div class="content">
+                <section class="element" style="margin-bottom:20px;">
+                    <div class="info" style="margin-bottom:16px;">Select a deck to preview the pad sounds. It might take
+                        some time to load sounds.
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="deck" id="deck_1" onclick="setDeck(1)">1</td>
+                            <td class="deck" id="deck_2" onclick="setDeck(2)">2</td>
+                            <td class="deck" id="deck_3" onclick="setDeck(3)">3</td>
+                            <td class="deck" id="deck_4" onclick="setDeck(4)">4</td>
+                            <td class="pad pad-small" id="pad_00">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_00">No sound loaded</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_11">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_11">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_12">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_12">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_13">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_13">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_14">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_14">No sound loaded</div>
+                            </td>
+                            <td class="pattern">1</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_21">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_21">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_22">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_22">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_23">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_23">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_24">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_24">No sound loaded</div>
+                            </td>
+                            <td class="pattern">2</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_31">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_31">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_32">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_32">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_33">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_33">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_34">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_34">No sound loaded</div>
+                            </td>
+                            <td class="pattern">3</td>
+                        </tr>
+                        <tr>
+                            <td class="pad" id="pad_41">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_41">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_42">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_42">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_43">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_43">No sound loaded</div>
+                            </td>
+                            <td class="pad" id="pad_44">
+                                <div class="gesture"></div>
+                                <div class="mdl-tooltip" for="pad_44">No sound loaded</div>
+                            </td>
+                            <td class="pattern">4</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </div>
+    <div id="about_card" class="card">
+        <section class="tab">
+            <div class="title">Sounds</i>
             </div>
             <div class="content">
                 <section class="element" style="margin-bottom:20px;">
-                    <div class="help-div" id="help_input_sounds" style="display:block;">
-                        <div class="info">
-                            Sound files can be in <i><b>.wav</b></i> or <i><b>.ogg</b></i> format.
-                            <br>
-                            File names should be formatted like <b><i>[preset_tag]</i>_<i>[deck_number]</i>_<i>[gesture_id]</i></b>
-                            <br>
-                            <i><b>Example: </b> "alan_walker_faded", 2nd deck, 3th column, 1st row, no gesture</i>
-                            <br>
-                            file name : <b><i>alan_walker_faded_2_31</i></b>
-                        </div>
-                    </div>
                     <div class="file-div" id="input_sounds_div">
                         <div class="file-input-description" id="upload_sounds">
                             <img class="file-input-icon" id="input_sounds_icon" src="img/upload.png"/>
