@@ -14,16 +14,13 @@
     <title>Preset store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-blue.min.css"/>
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-storage.js"></script>
     <script src="index.js"></script>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <meta name="description" content="Quality software.">
@@ -34,18 +31,18 @@
     <meta name="google-site-verification" content="2UUz8GiOgKqRZK5wiOw5VU700bSVCbzUtadaEo0B6dM"/>
     <link rel="icon"
           type="image/png"
-          href="../../img/favicon.png">
+          href="/img/favicon.png">
     <style>
         a {
-            color: #9575CD !important; /*Change link color */
+            color: #2196F3 !important; /*Change link color */
         }
 
         a:hover {
-            color: #2196F3 !important; /*Change link color (on mouse over)*/
+            color: #2196F3 !important; /*Change link color (on mouse over) */
         }
 
         #blue_bg {
-            background-color: #9575CD !important; /* Change top background color */
+            background-color: #1E88E5 !important; /* Change top background color */
         }
 
         #about_card > .tab > .title {
@@ -60,7 +57,7 @@
             color: #2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
         }
 
-        .help-card {
+        .product-card {
             padding: 15px 0 64px !important;
         }
 
@@ -70,33 +67,41 @@
 
         .title {
             margin-bottom: 16px;
+            margin-left: 32px;
         }
 
-        .help-content {
+        .product-content {
             border-bottom: solid 1px rgba(128, 128, 128, 0.25);
             margin-left: 0 !important;
         }
 
-        .help-content > * {
+        .product-content > * {
             margin-left: 32px;
         }
 
-        .title {
-            margin-left: 32px;
-        }
-
-        .help-title {
+        .product-title {
             font-size: large;
             margin-top: 8px;
         }
 
-        .help-list {
+        .product-list {
             margin-top: 8px;
             margin-bottom: 8px;
         }
 
-        .help-item {
-            padding-bottom: 2px;
+        .product-item {
+
+        }
+
+        .product-item > a {
+            color: black !important; /*Change link color */
+            text-decoration: none;
+            padding: 12px 16px 12px 0;
+        }
+
+        .product-item > a:hover {
+            color: black !important; /*Change link color (on mouse over) */
+            text-decoration: none;
         }
     </style>
 </head>
@@ -104,20 +109,18 @@
 <div id="blue_bg"></div>
 <header>
     <div id="quick_card" class="card">
-        <h1 id="name">Tapad Help</h1>
+        <h1 id="name">Berict Help</h1>
     </div>
 </header>
 <main>
-    <div id="about_card" class="card help-card">
+    <div id="about_card" class="card product-card">
         <section class="tab">
-            <div class="title">Welcome to the Tapad Help Center</div>
             <div class="content">
-                <div class="divider"></div>
-                <div class="help-content">
-                    <div class="help-title">Get started with Tapad</div>
-                    <div class="help-list">
-                        <div class="help-item">How to use Tapad</div>
-                        <div class="help-item">Change light, theme, and startup settings</div>
+                <div class="product-content">
+                    <div class="product-list">
+                        <div class="product-item">
+                            <a href="tapad">Tapad</a>
+                        </div>
                     </div>
                 </div>
             </div>
