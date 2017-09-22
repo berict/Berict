@@ -678,7 +678,7 @@ function getFileElement(name) {
 }
 
 function getGenre() {
-    var custom = $("preset_genre_custom").val();
+    var custom = $("#preset_genre_custom").val();
     if (custom !== null && custom.length > 0) {
         // custom
         return custom;
