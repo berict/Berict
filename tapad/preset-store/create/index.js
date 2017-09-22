@@ -218,7 +218,7 @@ function isFormFilled() {
 
     for (var inputMenu in inputMenus) {
         var inputMenuObject = $("#dropdown-" + inputMenu);
-        if (inputMenuObject.val().search("SELECT") > 0) {
+        if (inputMenuObject.val() !== null && inputMenuObject.val().find("SELECT") > 0) {
             // not selected
             filled = false;
         }
@@ -679,7 +679,7 @@ function getFileElement(name) {
 
 function getGenre() {
     var custom = $("preset_genre_custom").val();
-    if (custom.length > 0) {
+    if (custom !== null && custom.length > 0) {
         // custom
         return custom;
     } else {
