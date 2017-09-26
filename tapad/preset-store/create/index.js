@@ -99,49 +99,49 @@ function makeJSON() {
                         "items": [
                             {
                                 "hint": $("#store_soundcloud").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "soundcloud",
                                 "isRunnableWithAnim": false,
                                 "text": "soundcloud"
                             },
                             {
                                 "hint": $("#store_youtube").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "youtube",
                                 "isRunnableWithAnim": false,
                                 "text": "youtube"
                             },
                             {
                                 "hint": $("#store_spotify").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "spotify",
                                 "isRunnableWithAnim": false,
                                 "text": "spotify"
                             },
                             {
                                 "hint": $("#store_google_play").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "google_play_music",
                                 "isRunnableWithAnim": false,
                                 "text": "google_play_music"
                             },
                             {
                                 "hint": $("#store_apple").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "apple",
                                 "isRunnableWithAnim": false,
                                 "text": "apple"
                             },
                             {
                                 "hint": $("#store_amazon").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "amazon",
                                 "isRunnableWithAnim": false,
                                 "text": "amazon"
                             },
                             {
                                 "hint": $("#store_pandora").val(),
-                                "isHintVisible": true,
+                                "isHintVisible": false,
                                 "imageId": "pandora",
                                 "isRunnableWithAnim": false,
                                 "text": "pandora"
