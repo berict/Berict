@@ -45,52 +45,52 @@ function makeJSON() {
                         "items": [
                             {
                                 "hint": $("#artist_facebook").val(),
-                                "hint_is_visible": true,
-                                "image_id": "facebook",
-                                "runnable_is_with_anim": false,
-                                "text_id": "facebook"
+                                "isHintVisible": true,
+                                "imageId": "facebook",
+                                "isRunnableWithAnim": false,
+                                "text": "facebook"
                             },
                             {
                                 "hint": $("#artist_twitter").val(),
-                                "hint_is_visible": true,
-                                "image_id": "twitter",
-                                "runnable_is_with_anim": false,
-                                "text_id": "twitter"
+                                "isHintVisible": true,
+                                "imageId": "twitter",
+                                "isRunnableWithAnim": false,
+                                "text": "twitter"
                             },
                             {
                                 "hint": $("#artist_soundcloud").val(),
-                                "hint_is_visible": true,
-                                "image_id": "soundcloud",
-                                "runnable_is_with_anim": false,
-                                "text_id": "soundcloud"
+                                "isHintVisible": true,
+                                "imageId": "soundcloud",
+                                "isRunnableWithAnim": false,
+                                "text": "soundcloud"
                             },
                             {
                                 "hint": $("#artist_instagram").val(),
-                                "hint_is_visible": true,
-                                "image_id": "instagram",
-                                "runnable_is_with_anim": false,
-                                "text_id": "instagram"
+                                "isHintVisible": true,
+                                "imageId": "instagram",
+                                "isRunnableWithAnim": false,
+                                "text": "instagram"
                             },
                             {
                                 "hint": $("#artist_google_plus").val(),
-                                "hint_is_visible": true,
-                                "image_id": "google_plus",
-                                "runnable_is_with_anim": false,
-                                "text_id": "google_plus"
+                                "isHintVisible": true,
+                                "imageId": "google_plus",
+                                "isRunnableWithAnim": false,
+                                "text": "google_plus"
                             },
                             {
                                 "hint": $("#artist_youtube").val(),
-                                "hint_is_visible": true,
-                                "image_id": "youtube",
-                                "runnable_is_with_anim": false,
-                                "text_id": "youtube"
+                                "isHintVisible": true,
+                                "imageId": "youtube",
+                                "isRunnableWithAnim": false,
+                                "text": "youtube"
                             },
                             {
                                 "hint": $("#artist_web").val(),
-                                "hint_is_visible": true,
-                                "image_id": "web",
-                                "runnable_is_with_anim": false,
-                                "text_id": "web"
+                                "isHintVisible": true,
+                                "imageId": "web",
+                                "isRunnableWithAnim": false,
+                                "text": "web"
                             }
                         ],
                         "title": "About " + $("#song_artist").val()
@@ -99,52 +99,52 @@ function makeJSON() {
                         "items": [
                             {
                                 "hint": $("#store_soundcloud").val(),
-                                "hint_is_visible": true,
-                                "image_id": "soundcloud",
-                                "runnable_is_with_anim": false,
-                                "text_id": "soundcloud"
+                                "isHintVisible": true,
+                                "imageId": "soundcloud",
+                                "isRunnableWithAnim": false,
+                                "text": "soundcloud"
                             },
                             {
                                 "hint": $("#store_youtube").val(),
-                                "hint_is_visible": true,
-                                "image_id": "youtube",
-                                "runnable_is_with_anim": false,
-                                "text_id": "youtube"
+                                "isHintVisible": true,
+                                "imageId": "youtube",
+                                "isRunnableWithAnim": false,
+                                "text": "youtube"
                             },
                             {
                                 "hint": $("#store_spotify").val(),
-                                "hint_is_visible": true,
-                                "image_id": "spotify",
-                                "runnable_is_with_anim": false,
-                                "text_id": "spotify"
+                                "isHintVisible": true,
+                                "imageId": "spotify",
+                                "isRunnableWithAnim": false,
+                                "text": "spotify"
                             },
                             {
                                 "hint": $("#store_google_play").val(),
-                                "hint_is_visible": true,
-                                "image_id": "google_play_music",
-                                "runnable_is_with_anim": false,
-                                "text_id": "google_play_music"
+                                "isHintVisible": true,
+                                "imageId": "google_play_music",
+                                "isRunnableWithAnim": false,
+                                "text": "google_play_music"
                             },
                             {
                                 "hint": $("#store_apple").val(),
-                                "hint_is_visible": true,
-                                "image_id": "apple",
-                                "runnable_is_with_anim": false,
-                                "text_id": "apple"
+                                "isHintVisible": true,
+                                "imageId": "apple",
+                                "isRunnableWithAnim": false,
+                                "text": "apple"
                             },
                             {
                                 "hint": $("#store_amazon").val(),
-                                "hint_is_visible": true,
-                                "image_id": "amazon",
-                                "runnable_is_with_anim": false,
-                                "text_id": "amazon"
+                                "isHintVisible": true,
+                                "imageId": "amazon",
+                                "isRunnableWithAnim": false,
+                                "text": "amazon"
                             },
                             {
                                 "hint": $("#store_pandora").val(),
-                                "hint_is_visible": true,
-                                "image_id": "pandora",
-                                "runnable_is_with_anim": false,
-                                "text_id": "pandora"
+                                "isHintVisible": true,
+                                "imageId": "pandora",
+                                "isRunnableWithAnim": false,
+                                "text": "pandora"
                             }
                         ],
                         "title": "About this track"
