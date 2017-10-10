@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "942010163958",
+    "firebase_url": "https://tapad-4d342.firebaseio.com",
+    "project_id": "tapad-4d342",
+    "storage_bucket": "tapad-4d342.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942010163958:android:33abd1689e81106f",
+        "android_client_info": {
+          "package_name": "com.bedrock.padder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942010163958-5bfb98f48v9o7gt2jro0o06em73s81m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-DR2y4QzkcHxW5KOdXu-Yw3QjDGNXPOs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
