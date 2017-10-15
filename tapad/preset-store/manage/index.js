@@ -25,27 +25,8 @@ function getLatestRelease() {
 }
 
 function updateVersionCode() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            if (document.getElementById("version_code").value.length != 0) {
-                firebase.database().ref().update({
-                    versionCode: parseInt(document.getElementById("version_code").value)
-                });
-            } else {
-                console.error("Input error");
-            }
-        } else {
-            // need auth
-            var email = prompt("Sign in email");
-            var password = prompt("Sign in password");
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.error(errorCode + " - " + errorMessage);
-            });
-        }
-    });
+    // TODO add update code
+    // use adminMongo for now
 }
 
 function httpGet(url) {
@@ -54,18 +35,3 @@ function httpGet(url) {
     xmlHttp.send(null);
     return xmlHttp.responseText;
 }
-
-$(document).ready(
-    function () {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDo99FSUZZhuqqr_I0domrjzMa6SNVceQI",
-            authDomain: "tapad-4d342.firebaseapp.com",
-            databaseURL: "https://tapad-4d342.firebaseio.com",
-            projectId: "tapad-4d342",
-            storageBucket: "tapad-4d342.appspot.com",
-            messagingSenderId: "942010163958"
-        };
-        firebase.initializeApp(config);
-    }
-);

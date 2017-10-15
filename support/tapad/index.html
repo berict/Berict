@@ -38,7 +38,7 @@
         }
 
         a:hover {
-            color: #2196F3 !important; /*Change link color (on mouse over)*/
+            color: #2196F3 !important; /*Change link color (on mouse over) */
         }
 
         #blue_bg {
@@ -57,79 +57,53 @@
             color: #2196F3 !important; /*Change link color (on mouse over, ONLY Contact Card) */
         }
 
-        #fab {
-            background-color: #2196F3 !important; /*Change FAB background color */
+        .help-card {
+            padding: 15px 0 64px !important;
         }
 
-        #fab:hover {
-            background-color: #1976D2 !important; /*Change FAB background color (on mouse over) */
+        .divider {
+            border-bottom: solid 1px rgba(128, 128, 128, 0.5);
         }
 
-        /* custom css only for here */
-
-        .preset {
-            width: auto;
-            height: 200px;
+        .title {
+            margin-bottom: 16px;
         }
 
-        .preset-image {
-            width: 150px;
-            height: 150px;
-            margin: 5px;
-            float: right;
+        .help-content {
+            border-bottom: solid 1px rgba(128, 128, 128, 0.25);
+            margin-left: 0 !important;
         }
 
-        .detail {
-            float: left;
+        .help-content > * {
+            margin-left: 32px;
         }
 
-        .detail-song-name {
-            font-weight: bold;
-            font-size: 18px;
+        .title {
+            margin-left: 32px;
         }
 
-        .detail-song-artist {
-            margin-top: 4px;
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        .detail-preset-artist {
-            font-style: italic;
-            font-size: 14px;
-            opacity: 0.5;
-        }
-
-        .detail-gesture-preset {
+        .help-title {
+            font-size: large;
             margin-top: 8px;
-            font-size: 15px;
-            color: #2196F3;
         }
 
-        .detail-gesture-preset-icon {
-            width: 28px;
-            height: 28px;
-            padding: 4px;
-            margin-right: 4px;
+        .help-list {
+            margin-top: 8px;
+            margin-bottom: 8px;
         }
 
-        .mdl-button {
-            color: #9575CD;
-            font-weight: bold;
-            font-size: 15px;
-            margin-top: 12px;
-            margin-left: -12px;
+        .help-item {
         }
 
-        #progress {
-            display: block;
-            width: 150px;
-            margin: 100px auto;
+        .help-item > a {
+            color: black !important; /*Change link color */
+            text-decoration: none;
+            padding: 12px 16px 12px 0;
         }
 
-        #progress_text {
-            text-align: center;
-            font-size: 16px;
+        .help-item > a:hover {
+            color: black !important; /*Change link color (on mouse over) */
+            text-decoration: none;
         }
     </style>
 </head>
@@ -137,41 +111,29 @@
 <div id="blue_bg"></div>
 <header>
     <div id="quick_card" class="card">
-        <h1 id="name">Preset store</h1>
-        <h2 id="description">Discover and download new presets.</h2>
+        <h1 id="name">Tapad Help</h1>
     </div>
 </header>
 <main>
-    <div id="about_card" class="card">
+    <div id="about_card" class="card help-card">
         <section class="tab">
-            <div class="title">Presets</div>
+            <div class="title">Welcome to the Tapad Help Center</div>
             <div class="content">
-                <section class="element" id="preset_list" style="margin-top: 12px">
-                    <!-- List view -->
-                    <div id="progress">
-                        <p id="progress_text">Loading preset store</p>
-                        <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                <div class="divider"></div>
+                <div class="help-content">
+                    <div class="help-title">Get started with Tapad</div>
+                    <div class="help-list">
+                        <div class="help-item">
+                            <a href="answer/1">How to use Tapad</a>
+                        </div>
+                        <div class="help-item">
+                            <a href="answer/2">Change color, theme, and startup settings</a>
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
         </section>
     </div>
-    <div id="about_card" class="card">
-        <section class="tab">
-            <div class="title">Manage presets</div>
-            <div class="content">
-                <section class="element">
-                    <div class="name">Create</div>
-                    <div class="info">
-                        <a href="create">Create a new preset</a>
-                    </div>
-                </section>
-            </div>
-        </section>
-    </div>
-    <a href="create">
-        <div id="fab"><i class="material-icons md-24 vertical-align-middle padding-bottom-4">add</i></div>
-    </a>
 </main>
 </body>
 </html>

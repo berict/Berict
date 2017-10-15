@@ -7,6 +7,8 @@ var inputArtistImage;
 var inputArtistIcon;
 
 var soundCount = 0;
+var difficulty = 3;
+var genre = "null";
 
 var sound;
 
@@ -26,133 +28,140 @@ $(document).ready(
 
 function makeJSON() {
     var jsonString = {
-        "about": {
-            "bio": {
-                "name": $("#bio_name").val(),
-                "source": $("#bio_source").val(),
-                "text": $("#bio_text").val(),
-                "title": $("#song_artist").val() + "\u0027s biography"
-            },
-            "color": $("#about_color").val(),
-            "details": [
-                {
-                    "items": [
-                        {
-                            "hint": $("#artist_facebook").val(),
-                            "hint_is_visible": true,
-                            "image_id": "facebook",
-                            "runnable_is_with_anim": false,
-                            "text_id": "facebook"
-                        },
-                        {
-                            "hint": $("#artist_twitter").val(),
-                            "hint_is_visible": true,
-                            "image_id": "twitter",
-                            "runnable_is_with_anim": false,
-                            "text_id": "twitter"
-                        },
-                        {
-                            "hint": $("#artist_soundcloud").val(),
-                            "hint_is_visible": true,
-                            "image_id": "soundcloud",
-                            "runnable_is_with_anim": false,
-                            "text_id": "soundcloud"
-                        },
-                        {
-                            "hint": $("#artist_instagram").val(),
-                            "hint_is_visible": true,
-                            "image_id": "instagram",
-                            "runnable_is_with_anim": false,
-                            "text_id": "instagram"
-                        },
-                        {
-                            "hint": $("#artist_google_plus").val(),
-                            "hint_is_visible": true,
-                            "image_id": "google_plus",
-                            "runnable_is_with_anim": false,
-                            "text_id": "google_plus"
-                        },
-                        {
-                            "hint": $("#artist_youtube").val(),
-                            "hint_is_visible": true,
-                            "image_id": "youtube",
-                            "runnable_is_with_anim": false,
-                            "text_id": "youtube"
-                        },
-                        {
-                            "hint": $("#artist_web").val(),
-                            "hint_is_visible": true,
-                            "image_id": "web",
-                            "runnable_is_with_anim": false,
-                            "text_id": "web"
-                        }
-                    ],
-                    "title": "About " + $("#song_artist").val()
+        "description": $("#preset_description").val(),
+        "difficulty": Number(difficulty),
+        "genre": getGenre(),
+        "preset": {
+            "about": {
+                "bio": {
+                    "name": $("#bio_name").val(),
+                    "source": $("#bio_source").val(),
+                    "text": $("#bio_text").val(),
+                    "title": $("#song_artist").val() + "\u0027s biography"
                 },
-                {
-                    "items": [
-                        {
-                            "hint": $("#store_soundcloud").val(),
-                            "hint_is_visible": true,
-                            "image_id": "soundcloud",
-                            "runnable_is_with_anim": false,
-                            "text_id": "soundcloud"
-                        },
-                        {
-                            "hint": $("#store_youtube").val(),
-                            "hint_is_visible": true,
-                            "image_id": "youtube",
-                            "runnable_is_with_anim": false,
-                            "text_id": "youtube"
-                        },
-                        {
-                            "hint": $("#store_spotify").val(),
-                            "hint_is_visible": true,
-                            "image_id": "spotify",
-                            "runnable_is_with_anim": false,
-                            "text_id": "spotify"
-                        },
-                        {
-                            "hint": $("#store_google_play").val(),
-                            "hint_is_visible": true,
-                            "image_id": "google_play_music",
-                            "runnable_is_with_anim": false,
-                            "text_id": "google_play_music"
-                        },
-                        {
-                            "hint": $("#store_apple").val(),
-                            "hint_is_visible": true,
-                            "image_id": "apple",
-                            "runnable_is_with_anim": false,
-                            "text_id": "apple"
-                        },
-                        {
-                            "hint": $("#store_amazon").val(),
-                            "hint_is_visible": true,
-                            "image_id": "amazon",
-                            "runnable_is_with_anim": false,
-                            "text_id": "amazon"
-                        },
-                        {
-                            "hint": $("#store_pandora").val(),
-                            "hint_is_visible": true,
-                            "image_id": "pandora",
-                            "runnable_is_with_anim": false,
-                            "text_id": "pandora"
-                        }
-                    ],
-                    "title": "About this track"
-                }
-            ],
-            "isTutorialAvailable": isTutorialAvailable(),
-            "presetArtist": $("#about_preset_artist").val(),
-            "songArtist": $("#song_artist").val(),
-            "songName": $("#song_name").val()
+                "color": $("#about_color").val(),
+                "details": [
+                    {
+                        "items": [
+                            {
+                                "hint": $("#artist_facebook").val(),
+                                "isHintVisible": true,
+                                "imageId": "facebook",
+                                "isRunnableWithAnim": false,
+                                "text": "facebook"
+                            },
+                            {
+                                "hint": $("#artist_twitter").val(),
+                                "isHintVisible": true,
+                                "imageId": "twitter",
+                                "isRunnableWithAnim": false,
+                                "text": "twitter"
+                            },
+                            {
+                                "hint": $("#artist_soundcloud").val(),
+                                "isHintVisible": true,
+                                "imageId": "soundcloud",
+                                "isRunnableWithAnim": false,
+                                "text": "soundcloud"
+                            },
+                            {
+                                "hint": $("#artist_instagram").val(),
+                                "isHintVisible": true,
+                                "imageId": "instagram",
+                                "isRunnableWithAnim": false,
+                                "text": "instagram"
+                            },
+                            {
+                                "hint": $("#artist_google_plus").val(),
+                                "isHintVisible": true,
+                                "imageId": "google_plus",
+                                "isRunnableWithAnim": false,
+                                "text": "google_plus"
+                            },
+                            {
+                                "hint": $("#artist_youtube").val(),
+                                "isHintVisible": true,
+                                "imageId": "youtube",
+                                "isRunnableWithAnim": false,
+                                "text": "youtube"
+                            },
+                            {
+                                "hint": $("#artist_web").val(),
+                                "isHintVisible": true,
+                                "imageId": "web",
+                                "isRunnableWithAnim": false,
+                                "text": "web"
+                            }
+                        ],
+                        "title": "About " + $("#song_artist").val()
+                    },
+                    {
+                        "items": [
+                            {
+                                "hint": $("#store_soundcloud").val(),
+                                "isHintVisible": false,
+                                "imageId": "soundcloud",
+                                "isRunnableWithAnim": false,
+                                "text": "soundcloud"
+                            },
+                            {
+                                "hint": $("#store_youtube").val(),
+                                "isHintVisible": false,
+                                "imageId": "youtube",
+                                "isRunnableWithAnim": false,
+                                "text": "youtube"
+                            },
+                            {
+                                "hint": $("#store_spotify").val(),
+                                "isHintVisible": false,
+                                "imageId": "spotify",
+                                "isRunnableWithAnim": false,
+                                "text": "spotify"
+                            },
+                            {
+                                "hint": $("#store_google_play").val(),
+                                "isHintVisible": false,
+                                "imageId": "google_play_music",
+                                "isRunnableWithAnim": false,
+                                "text": "google_play_music"
+                            },
+                            {
+                                "hint": $("#store_apple").val(),
+                                "isHintVisible": false,
+                                "imageId": "apple",
+                                "isRunnableWithAnim": false,
+                                "text": "apple"
+                            },
+                            {
+                                "hint": $("#store_amazon").val(),
+                                "isHintVisible": false,
+                                "imageId": "amazon",
+                                "isRunnableWithAnim": false,
+                                "text": "amazon"
+                            },
+                            {
+                                "hint": $("#store_pandora").val(),
+                                "isHintVisible": false,
+                                "imageId": "pandora",
+                                "isRunnableWithAnim": false,
+                                "text": "pandora"
+                            }
+                        ],
+                        "title": "About this track"
+                    }
+                ],
+                "isTutorialAvailable": isTutorialAvailable(),
+                "presetArtist": $("#about_preset_artist").val(),
+                "songArtist": $("#song_artist").val(),
+                "songName": $("#song_name").val()
+            },
+            "bpm": $("#bpm").val(),
+            "isGesture": isGesturePreset(),
+            "soundCount": soundCount,
+            "tag": "CUSTOM_INPUT"
         },
-        "bpm": $("#bpm").val(),
-        "isGesture": isGesturePreset(),
-        "soundCount": soundCount,
-        "tag": "CUSTOM_INPUT"
+        "reviews": [],
+        "version": Number($("#preset_version").val())
     };
     //change object into String
     json = JSON.stringify(jsonString);
@@ -168,6 +177,12 @@ function isFormFilled() {
         "bio_text",
         "bio_name",
         "bio_source"
+    ];
+
+    var inputMenus = [
+        "preset-difficulty",
+        "preset-type",
+        "preset-genre"
     ];
 
     var optionalInputs = [
@@ -197,6 +212,15 @@ function isFormFilled() {
             // empty, trigger mdl input error
             // seems not working
             inputObject.focus();
+            inputObject.attr('required', true);
+        }
+    }
+
+    for (var inputMenu in inputMenus) {
+        var inputMenuObject = $("#dropdown-" + inputMenu);
+        if (inputMenuObject.val() !== null && inputMenuObject.val().find("SELECT") > 0) {
+            // not selected
+            filled = false;
         }
     }
 
@@ -402,6 +426,10 @@ function setGesture(pad, gesture) {
     }
 }
 
+function setDifficulty(diff) {
+    difficulty = diff;
+}
+
 function appendTooltipText(object, value) {
     var obj = $(object);
     var text = obj.text();
@@ -413,14 +441,13 @@ function appendTooltipText(object, value) {
 }
 
 function createPreset() {
-    // TODO input validated before server push
     if (inputSounds == null) {
         alert("Please upload preset sounds");
-    } /*else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
+    } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
         alert("Please upload all images");
     } else if (isFormFilled()) {
         alert("Please fill out the form");
-    }*/ else {
+    } else {
         // all passed, make preset
         makeJSON(); //make JSON with changed sound_count
 
@@ -650,8 +677,31 @@ function getFileElement(name) {
     return text;
 }
 
-function setDropDownMenu(string) {
-    document.getElementById("dropdown-preset-type").innerText = string;
+function getGenre() {
+    var custom = $("#preset_genre_custom").val();
+    if (custom !== null && custom.length > 0) {
+        // custom
+        return custom;
+    } else {
+        return genre;
+    }
+}
+
+function setDropDownMenu(element, textElement) {
+    document.getElementById(element).innerText = textElement.innerText;
+
+    // custom
+    if (element === "dropdown-preset-genre") {
+        genre = textElement.innerText;
+        if (genre === "Custom") {
+            // show genre input
+            console.log("custom");
+            $("#preset_genre_custom_section").hide().fadeIn(200);
+        } else {
+            $("#preset_genre_custom_section").hide();
+            $("#preset_genre_custom").val("");
+        }
+    }
 }
 
 function isGesturePreset() {
@@ -691,4 +741,12 @@ function showHelp(id) {
     } else {
         help.hide().fadeIn(200);
     }
+}
+
+function getTextNode(text) {
+    return document.createTextNode(text);
+}
+
+function setText(object, text) {
+    object.appendChild(getTextNode(text));
 }
