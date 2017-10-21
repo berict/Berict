@@ -8,6 +8,10 @@ server {
 
         set $sub_folder "";
 
+        if ($sub ~ "(.+)") {
+            set $hack T;
+        }
+
         if ($sub ~ "(file)$") {
             set $sub_folder "file";
         }
@@ -28,8 +32,12 @@ server {
             return 301 http://berict.com$request_uri;
         }
 
-        if ($sub !~ "") {
-            return 301 http://berict.com;
+        set $hack "${hack}${sub_folder}";
+
+        if ($hack = T) {
+            # more than one character but no match found
+            # redirect to home
+            return 301 http://berict.com$request_uri;
         }
 
         root /berict/$sub_folder;
