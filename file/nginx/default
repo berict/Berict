@@ -28,7 +28,7 @@ server {
             return 301 http://berict.com$request_uri;
         }
 
-        if ($sub = "") {
+        if ($sub_folder = "") {
             return 301 http://berict.com$request_uri;
         }
 
