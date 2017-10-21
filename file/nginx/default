@@ -6,7 +6,7 @@ server {
 
         server_name "~^(?<sub>.+)\.berict\.com$";
 
-        set $sub_folder "";
+        set $sub_folder "null";
 
         if ($sub ~ "(file)$") {
             set $sub_folder "file";
@@ -28,8 +28,8 @@ server {
             return 301 http://berict.com$request_uri;
         }
 
-        if ($sub_folder = "") {
-            return 301 http://berict.com$request_uri;
+        if ($sub_folder ~ "null") {
+            return 301 http://berict.com;
         }
 
         root /berict/$sub_folder;
