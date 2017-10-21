@@ -6,30 +6,14 @@ server {
 
         server_name "~^(?<sub>.+)\.berict\.com$";
 
-        set $sub_folder "null";
+        set $sub_folder $sub;
 
-        if ($sub ~ "(file)$") {
-            set $sub_folder "file";
-        }
-
-        if ($sub ~ "(support)$") {
-            set $sub_folder "support";
-        }
-
-        if ($sub ~ "(bedrock)$") {
-            set $sub_folder "bedrock";
-        }
-
-        if ($sub ~ "(tapad)$") {
-            set $sub_folder "tapad";
-        }
-
-        if ($sub ~ "") {
+        if ($sub ~ "www") {
             return 301 http://berict.com$request_uri;
         }
 
-        if ($sub_folder ~ "null") {
-            return 301 http://berict.com$request_uri;
+        if ($sub ~* "www") {
+            set $sub_folder $sub;
         }
 
         root /berict/$sub_folder;
