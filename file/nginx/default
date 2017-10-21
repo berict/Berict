@@ -12,7 +12,7 @@ server {
             return 301 http://berict.com$request_uri;
         }
 
-        if ($sub ~* "www") {
+        if ($sub !~ "www") {
             set $sub_folder $sub;
         }
 
