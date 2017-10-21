@@ -1,0 +1,16 @@
+# located in /etc/nginx/sites-enabled/default
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name "~^(?<sub>.+)\.berict\.com$";
+
+        root /berict/$sub;
+
+        index index.html;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
