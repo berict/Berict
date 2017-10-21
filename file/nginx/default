@@ -9,8 +9,7 @@ server {
         set $sub_folder $sub;
 
         if ($sub ~ "www") {
-            # set $sub_folder "";
-            return 301 http://berict.com$request_uri;
+            set $sub_folder "";
         }
 
         root /berict/$sub_folder;
