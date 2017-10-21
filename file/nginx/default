@@ -6,7 +6,13 @@ server {
 
         server_name "~^(?<sub>.+)\.berict\.com$";
 
-        root /berict/$sub;
+        set $sub_folder $sub;
+
+        if ($sub ~ "www") {
+            set $sub_folder "";
+        }
+
+        root /berict/$sub_folder;
 
         index index.html;
 
