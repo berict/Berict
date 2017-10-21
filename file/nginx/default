@@ -6,15 +6,15 @@ server {
 
         server_name "~^(?<sub>.+)\.berict\.com$";
 
-        if ($sub ~ "(www)$") {
-            return 301 http://berict.com$request_uri;
-        }
-
         root /berict/$sub;
 
         index index.html;
 
         location / {
                 try_files $uri $uri/ =404;
+        }
+
+        if ($sub ~ "(www)$") {
+            return 301 http://berict.com$request_uri;
         }
 }
