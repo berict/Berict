@@ -6,7 +6,7 @@ server {
 
         server_name "~^(?<sub>.+)\.berict\.com$";
 
-        if ($sub ~ "www") {
+        if ($sub ~ "(www)$") {
             return 301 http://berict.com$request_uri;
         }
 
