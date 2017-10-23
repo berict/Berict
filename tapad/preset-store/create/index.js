@@ -445,7 +445,7 @@ function createPreset() {
         alert("Please upload preset sounds");
     } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
         alert("Please upload all images");
-    } else if (isFormFilled()) {
+    } else if (!isFormFilled()) {
         alert("Please fill out the form");
     } else {
         // all passed, make preset
