@@ -445,7 +445,7 @@ function createPreset() {
         alert("Please upload preset sounds");
     } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
         alert("Please upload all images");
-    } else if (isFormFilled()) {
+    } else if (!isFormFilled()) {
         alert("Please fill out the form");
     } else {
         // all passed, make preset
@@ -632,14 +632,21 @@ function setInput(id, errorFileType, result) {
                             $(this).hide();
                         });
                         $("#upload_" + id + "_preview_div").hide().delay(200).fadeIn(200);
-                        $("#upload_" + id + "_preview").attr("src", e.target.result).hide().delay(200).fadeIn(200);
+
+                        // URL blob to display image
+                        // magically from:
+                        // https://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
+                        var blob = b64toBlob((e.target.result).replace(/.+,/, ""), image.type);
+                        var blobUrl = URL.createObjectURL(blob);
+
+                        $("#upload_" + id + "_preview").attr("src", blobUrl).hide().delay(200).fadeIn(200);
                         // insert clear button
                         $(clear)
                             .hide().appendTo(document.getElementById("upload_" + id + "_preview_div"))
                             .delay(200).fadeIn(200);
 
                         // return results, encoded with jsZip-compatible base64
-                        window[result] = (e.target.result).replace(/.+,/g, "");
+                        window[result] = (e.target.result).replace(/.+,/, "");
                     };
                 })(image);
 
@@ -668,6 +675,32 @@ function setInput(id, errorFileType, result) {
         // hide the preview image
         $("#upload_" + id + "_preview").hide();
     }
+}
+
+function b64toBlob(b64Data, contentType, sliceSize) {
+    // Brought here magically by:
+    // https://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
+    contentType = contentType || '';
+    sliceSize = sliceSize || 512;
+
+    var byteCharacters = atob(b64Data);
+    var byteArrays = [];
+
+    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+        var byteNumbers = new Array(slice.length);
+        for (var i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        var byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+    }
+
+    var blob = new Blob(byteArrays, {type: contentType});
+    return blob;
 }
 
 function getFileElement(name) {
