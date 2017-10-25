@@ -21,3 +21,6 @@
 
 # preset.zips
 *.zip
+
+# RITT
+/ritt

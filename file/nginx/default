@@ -28,6 +28,10 @@ server {
             set $sub_folder "tapad";
         }
 
+        if ($sub ~ "(ritt)$") {
+            set $sub_folder "ritt";
+        }
+
         if ($sub ~ "(www)$") {
             return 301 http://berict.com$request_uri;
         }
