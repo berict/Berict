@@ -22,5 +22,8 @@
 # preset.zips
 *.zip
 
+# preset workspace
+.preset/
+
 # RITT
 /ritt
