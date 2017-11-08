@@ -87,6 +87,7 @@ function getPresets() {
     // Response handlers.
     xhr.onload = function () {
         response = xhr.responseText;
+        console.log(response);
         setAdapter(response);
     };
 
