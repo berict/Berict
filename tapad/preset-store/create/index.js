@@ -218,9 +218,11 @@ function isFormFilled() {
 
     for (var inputMenu in inputMenus) {
         var inputMenuObject = $("#dropdown-" + inputMenu);
-        if (inputMenuObject.val() !== null && inputMenuObject.val().find("SELECT") > 0) {
-            // not selected
-            filled = false;
+        if (inputMenuObject.val() !== null && inputMenuObject.val() != null) {
+            if (inputMenuObject.val().search("SELECT") > 0) {
+                // not selected
+                filled = false;
+            }
         }
     }
 
