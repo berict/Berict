@@ -4,12 +4,6 @@
   "genre": "Dance",
   "preset": {
     "about": {
-      "bio": {
-        "name": "Andrew Taggart and Alex Pall",
-        "source": "Powered by last.fm",
-        "text": "The Chainsmokers are a disc jockey/producer duo consisting of Andrew \"Drew\" Taggart (born December 31st 1989) and Alexander \"Alex\" Pall (born May 16th 1985) from New York City, United States.",
-        "title": "The Chainsmokers' biography"
-      },
       "color": "#F39FAA",
       "isTutorialAvailable": false,
       "presetArtist": "Studio Berict",
@@ -17,10 +11,10 @@
       "songName": "Roses ft. ROZES"
     },
     "bpm": "100",
-    "isGesture": false,
+    "isGesture": true,
     "soundCount": 203,
     "tag": "the_chainsmokers_roses_gesture"
   },
   "reviews": [],
-  "version": 1
+  "version": 2
 }
