@@ -23,6 +23,10 @@ $(document).ready(
         setInput("artist_icon", "png / ico", "inputArtistIcon");
 
         initializeArray();
+
+        window.onbeforeunload = function () {
+            return "Discard unsaved changes?";
+        };
     }
 );
 
