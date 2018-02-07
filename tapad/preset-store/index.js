@@ -68,7 +68,7 @@ function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, t
     detail.appendChild(download);
     var preset_image = document.createElement("IMG");
     preset_image.className = "preset_image";
-    preset_image.src = "http://file.berict.com/tapad/presets/" + tag + "/album_art.jpg";
+    preset_image.src = "/file/tapad/presets/" + tag + "/album_art.jpg";
     preset_image.style = "width: 150px; height: 150px; margin: 5px; float: right;";
     preset.appendChild(preset_image);
     preset.appendChild(detail);
@@ -133,7 +133,7 @@ function createCORSRequest(method, url) {
 }
 
 function downloadPreset(tag) {
-    window.location.href = "http://file.berict.com/tapad/presets/" + tag + "/preset.zip";
+    window.location.href = "/file/tapad/presets/" + tag + "/preset.zip";
 }
 
 function getTextNode(text) {

@@ -50,19 +50,20 @@ a:hover {
     overflow: visible;
 }
 
-#quick_card {
+.quick_card {
     padding: 25px;
     margin-top: 10vh;
     text-align: center;
+    margin-bottom: 36px;
 }
 
-#quick_card #photo {
+.quick_card #photo {
     height: 80px;
     width: 80px;
     border-radius: 99px;
 }
 
-#quick_card #name {
+.quick_card #name {
     font-weight: normal;
     margin-top: 20px;
     font-size: 19px;
@@ -70,26 +71,26 @@ a:hover {
     font-family: 'Roboto Mono', sans-serif;
 }
 
-#quick_card #description {
+.quick_card #description {
     font-weight: normal;
     font-size: 15px;
     color: #616161;
     font-family: 'Roboto Mono', sans-serif;
 }
 
-#about_card {
+.about_card {
     position: relative;
     padding: 15px 32px 8px 32px;
     margin-top: 22px;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
 }
 
-#about_card > .tab {
+.about_card > .tab {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-#about_card > .tab > .title {
+.about_card > .tab > .title {
     font-size: 16px;
     color: #9E9D24; /*Change title and title icon color (About Card)*/
     font-family: 'Roboto Mono', sans-serif;
@@ -100,23 +101,23 @@ a:hover {
     left: -10px;
 }
 
-#about_card > .tab > .content {
+.about_card > .tab > .content {
     padding: 0px 0px 0px 0px;
 }
 
-#about_card .element {
+.about_card .element {
     margin-bottom: 5px;
     margin-top: 5px;
 }
 
-#about_card .element .name {
+.about_card .element .name {
     color: #212121;
     font-size: 15px;
     font-family: 'Roboto Mono', sans-serif;
 
 }
 
-#about_card .element .info {
+.about_card .element .info {
     color: #616161;
     font-size: 14px;
 }
@@ -129,30 +130,30 @@ hr {
     border: 0;
 }
 
-#contact_card {
+.contact_card {
     position: relative;
     padding: 15px 30px 15px 30px;
     margin-top: 22px;
     margin-bottom: 40px;
 }
 
-#contact_card > .tab {
+.contact_card > .tab {
     margin-top: 3px;
     margin-bottom: 8px;
 }
 
-#contact_card > .tab > .title {
+.contact_card > .tab > .title {
     font-size: 16px;
     color: #9E9D24; /*Change title and title icon color (Contact Card)*/
     font-family: 'Roboto Mono', sans-serif;
 }
 
-#contact_card > .tab > .content {
+.contact_card > .tab > .content {
     padding-top: 10px;
     text-align: left;
 }
 
-#contact_card > .tab > .content > .contacts {
+.contact_card > .tab > .content > .contacts {
     padding-top: 4px;
     padding-bottom: 4px;
     padding-right: 16px;
@@ -161,7 +162,7 @@ hr {
     color: #212121;
 }
 
-#contact_card > .tab > .content > .about {
+.contact_card > .tab > .content > .about {
     padding-top: 4px;
     padding-right: 16px;
     display: inline-block;
@@ -170,12 +171,12 @@ hr {
     color: #212121;
 }
 
-#contact_card a {
+.contact_card a {
     color: #616161;
     text-decoration: none; /*Change link color (ONLY Contact Card)*/
 }
 
-#contact_card a:hover {
+.contact_card a:hover {
     color: #5C6BC0; /*Change link color (on mouse over, ONLY Contact Card) */
 }
 

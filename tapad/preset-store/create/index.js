@@ -446,46 +446,6 @@ function appendTooltipText(object, value) {
     }
 }
 
-function createPreset() {
-    if (inputSounds == null) {
-        alert("Please upload preset sounds");
-    } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
-        alert("Please upload all images");
-    } else if (!isFormFilled()) {
-        alert("Please fill out the form");
-    } else {
-        // all passed, make preset
-        makeJSON(); //make JSON with changed sound_count
-
-        var zip = new JSZip(); //make zip file
-
-        var preset = zip.folder("preset");
-
-        var about = preset.folder("about");
-        var sounds = preset.folder("sounds");
-        var timing = preset.folder("timing");
-
-        about.file("json", json);
-        about.file("album_art", inputAlbumArt, {base64: true});
-        about.file("artist_image", inputArtistImage, {base64: true});
-        about.file("artist_icon", inputArtistIcon, {base64: true});
-
-        if (inputSounds.length == inputSoundFileNames.length) {
-            for (var i = 0; i < inputSounds.length; i++) {
-                sounds.file("sound_" + inputSoundFileNames[i], inputSounds[i]);
-            }
-        } else {
-            console.error("Error on load counts");
-        }
-
-        zip.generateAsync({type: "blob"})
-            .then(function (content) {
-                    saveAs(content, "preset.zip"); //save zip file
-                }
-            );
-    }
-}
-
 function clearInput(id, result) {
     var input = $("#input_" + id);
     input.val("");
@@ -788,4 +748,44 @@ function getTextNode(text) {
 
 function setText(object, text) {
     object.appendChild(getTextNode(text));
+}
+
+function createPreset() {
+    if (inputSounds == null) {
+        alert("Please upload preset sounds");
+    } else if (inputAlbumArt == null || inputArtistImage == null || inputArtistIcon == null) {
+        alert("Please upload all images");
+    } else if (!isFormFilled()) {
+        alert("Please fill out the form");
+    } else {
+        // all passed, make preset
+        makeJSON(); //make JSON with changed sound_count
+
+        var zip = new JSZip(); //make zip file
+
+        var preset = zip.folder("preset");
+
+        var about = preset.folder("about");
+        var sounds = preset.folder("sounds");
+        var timing = preset.folder("timing");
+
+        about.file("json", json);
+        about.file("album_art", inputAlbumArt, {base64: true});
+        about.file("artist_image", inputArtistImage, {base64: true});
+        about.file("artist_icon", inputArtistIcon, {base64: true});
+
+        if (inputSounds.length == inputSoundFileNames.length) {
+            for (var i = 0; i < inputSounds.length; i++) {
+                sounds.file("sound_" + inputSoundFileNames[i], inputSounds[i]);
+            }
+        } else {
+            console.error("Error on load counts");
+        }
+
+        zip.generateAsync({type: "blob"})
+            .then(function (content) {
+                    saveAs(content, "preset.zip"); //save zip file
+                }
+            );
+    }
 }
