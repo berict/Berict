@@ -47,6 +47,7 @@ a:hover {
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.19), 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.4s ease-in-out;
     overflow: visible;
 }
 
@@ -178,6 +179,67 @@ hr {
 
 .contact_card a:hover {
     color: #5C6BC0; /*Change link color (on mouse over, ONLY Contact Card) */
+}
+
+.card .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.card.expanded .content {
+    max-height: 1000px;
+}
+
+.card .tab .title button.card-expand {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0;
+}
+
+.card .tab .title .card-expand .card-expand-icon {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.card .tab .title button.card-expand {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.card .tab .title button.card-expand:focus {
+    outline: none;
+}
+
+.card .tab .title button.card-expand .expand {
+    display: block;
+}
+
+.card .tab .title button.card-expand .close {
+    display: none;
+}
+
+.card .tab .title button.card-expand:hover {
+    background-color: #F9F9F9;
+}
+
+.card.expanded {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.19), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.card.expanded .tab .title button.card-expand .expand {
+    display: none;
+}
+
+.card.expanded .tab .title button.card-expand .close {
+    display: block;
 }
 
 #fab {

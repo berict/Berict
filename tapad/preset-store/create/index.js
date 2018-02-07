@@ -22,6 +22,16 @@ $(document).ready(
         setInput("artist_image", "image", "inputArtistImage");
         setInput("artist_icon", "png / ico", "inputArtistIcon");
 
+        $('.card-expand').click(function () {
+            $(this).parent().parent().parent().toggleClass('expanded');
+        });
+
+        var cardHeight = $('.card.expanded').innerHeight();
+        $('.card.expanded .content').css('max-height', cardHeight);
+
+        $("#preset_sounds").toggleClass('expanded');
+        $("#preset_details").toggleClass('expanded');
+
         initializeArray();
 
         window.onbeforeunload = function () {
