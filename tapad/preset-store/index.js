@@ -101,7 +101,7 @@ function getPresets() {
 
 function setAdapter(response) {
     if (response !== undefined) {
-        var presets = JSON.parse(response).presets;
+        var presets = JSON.parse(response);
         for (var i = 0; i < presets.length; i++) {
             addListItem(
                 presets[i].preset.about.songName,
