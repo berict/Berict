@@ -118,8 +118,6 @@ function createCORSRequest(method, url) {
     // Examples from https://www.html5rocks.com/en/tutorials/cors/
     // Create the XHR object.
     var xhr = new XMLHttpRequest();
-    //xhr.setRequestHeader('Content-Type', 'text/plain');
-    xhr.setRequestHeader('Content-Type', 'application/octet-stream');
     if ("withCredentials" in xhr) {
         // XHR for Chrome/Firefox/Opera/Safari.
         xhr.open(method, url, true);
@@ -131,6 +129,8 @@ function createCORSRequest(method, url) {
         // CORS not supported.
         xhr = null;
     }
+    //xhr.setRequestHeader('Content-Type', 'text/plain');
+    xhr.setRequestHeader('Content-Type', 'application/octet-stream');
     return xhr;
 }
 
