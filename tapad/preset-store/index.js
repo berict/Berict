@@ -11,7 +11,6 @@ var list;
 var response = "";
 
 function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
-    console.log("Added " + songName);
     if ($("#progress").is(":visible")) {
         $("#progress").fadeOut(200, function () {
             $(this).remove();
@@ -22,7 +21,6 @@ function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, c
     }
     $("img").hide().one("load", function () {
         $(this).fadeIn(200);
-        console.log("fadein");
     }).each(function () {
         if (this.complete) $(this).load();
     });
@@ -76,6 +74,8 @@ function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, t
     return preset;
 }
 
+var r;
+
 function getPresets() {
     var url = "http://berict.com/api/tapad/presets";
     var xhr = createCORSRequest('GET', url);
@@ -101,7 +101,7 @@ function getPresets() {
 
 function setAdapter(response) {
     if (response !== undefined) {
-        var presets = JSON.parse(response);
+        var presets = JSON.parse(response).presets;
         for (var i = 0; i < presets.length; i++) {
             addListItem(
                 presets[i].preset.about.songName,
