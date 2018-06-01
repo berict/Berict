@@ -182,13 +182,8 @@ hr {
 }
 
 .card .content {
-    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
-}
-
-.card.expanded .content {
-    max-height: 1000px;
 }
 
 .card .tab .title button.card-expand {
