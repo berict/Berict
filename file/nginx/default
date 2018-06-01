@@ -58,7 +58,7 @@ server {
 
         location /api {
 
-        	index index.html;
+        	index result.json;
 
             try_files $uri $uri/ = 404;
 
