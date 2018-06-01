@@ -1,0 +1,26 @@
+{
+  "description": "Original version of the Alan Walker - Faded.",
+  "difficulty": 4,
+  "genre": "Dance",
+  "preset": {
+    "about": {
+      "bio": {
+        "name": "Alan Olav Walker",
+        "source": "Powered by Wikipedia X last.fm",
+        "text": "Alan Walker (Alan Olav Walker) is a British-Norwegian record producer who was born in Northampton, England. He recorded electronic dance music single \"Faded\" and his song released on NoCopyrightSounds, \"Fade\".",
+        "title": "Alan Walker's biography"
+      },
+      "color": "#00D3BE",
+      "isTutorialAvailable": false,
+      "presetArtist": "Studio Berict",
+      "songArtist": "Alan Walker",
+      "songName": "Faded"
+    },
+    "bpm": "90",
+    "isGesture": true,
+    "soundCount": 241,
+    "tag": "alan_walker_faded_gesture"
+  },
+  "reviews": [],
+  "version": 4
+}

@@ -1,0 +1,26 @@
+{
+  "description": "Original version of OMFG - Hello.",
+  "difficulty": 2,
+  "genre": "Electronic",
+  "preset": {
+    "about": {
+      "bio": {
+        "name": "Alex OMFG (Alex Savage)",
+        "source": "Powered by last.fm",
+        "text": "OMFG is Alex Savage.",
+        "title": "OMFG's biography"
+      },
+      "color": "#FF06DC",
+      "isTutorialAvailable": false,
+      "presetArtist": "Studio Berict",
+      "songArtist": "OMFG",
+      "songName": "Hello"
+    },
+    "bpm": "105",
+    "isGesture": false,
+    "soundCount": 56,
+    "tag": "omfg_hello"
+  },
+  "reviews": [],
+  "version": 2
+}

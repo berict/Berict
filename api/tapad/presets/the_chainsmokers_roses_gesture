@@ -1,0 +1,20 @@
+{
+  "description": "Original version of Roses - The Chainsmokers",
+  "difficulty": 4,
+  "genre": "Dance",
+  "preset": {
+    "about": {
+      "color": "#F39FAA",
+      "isTutorialAvailable": false,
+      "presetArtist": "Studio Berict",
+      "songArtist": "The Chainsmokers",
+      "songName": "Roses ft. ROZES"
+    },
+    "bpm": "100",
+    "isGesture": true,
+    "soundCount": 203,
+    "tag": "the_chainsmokers_roses_gesture"
+  },
+  "reviews": [],
+  "version": 2
+}
