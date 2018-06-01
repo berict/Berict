@@ -92,7 +92,7 @@ function getPresets() {
     };
 
     xhr.onerror = function () {
-        alert('Woops, there was an error making the request.');
+        alert('Whoops, there was an error making the request.');
     };
 
     xhr.send();
