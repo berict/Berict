@@ -13,7 +13,7 @@ server {
         }
 
         if ($sub ~ "(api)$") {
-            set $sub_folder "api";
+            return 301 http://berict.com/api$request_uri;
         }
 
         if ($sub ~ "(file)$") {
@@ -50,13 +50,17 @@ server {
 
         root /berict/$sub_folder;
 
-        index index.html json;
+        index index.html;
 
         location / {
                 try_files $uri $uri/ =404;
         }
 
-        if ($sub_folder = "api") {
+        location /api {
+
+        	index json;
+
+            try_files $uri $uri/ = 404;
 
             if ($request_method = 'OPTIONS') {
                 add_header 'Access-Control-Allow-Origin' '*';
