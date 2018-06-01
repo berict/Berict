@@ -129,8 +129,7 @@ function createCORSRequest(method, url) {
         // CORS not supported.
         xhr = null;
     }
-    //xhr.setRequestHeader('Content-Type', 'text/plain');
-    xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+    xhr.setRequestHeader('Content-Type', 'text/plain');
     return xhr;
 }
 
