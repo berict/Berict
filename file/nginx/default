@@ -50,15 +50,13 @@ server {
 
         root /berict/$sub_folder;
 
-        index index.html;
+        index index.html json;
 
         location / {
                 try_files $uri $uri/ =404;
         }
 
         if ($sub_folder = "api") {
-
-        	index json;
 
             try_files $uri $uri/ = 404;
 
