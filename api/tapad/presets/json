@@ -1,0 +1,82 @@
+{
+  "presets":[
+    {
+      "description":"Original version of OMFG - Hello.",
+      "difficulty":2,
+      "genre":"Electronic",
+      "preset":{
+        "about":{
+          "bio":{
+            "name":"Alex OMFG (Alex Savage)",
+            "source":"Powered by last.fm",
+            "text":"OMFG is Alex Savage.",
+            "title":"OMFG's biography"
+          },
+          "color":"#FF06DC",
+          "isTutorialAvailable":false,
+          "presetArtist":"Studio Berict",
+          "songArtist":"OMFG",
+          "songName":"Hello"
+        },
+        "bpm":"105",
+        "isGesture":false,
+        "soundCount":56,
+        "tag":"omfg_hello"
+      },
+      "reviews":[
+
+      ],
+      "version":2
+    },
+    {
+      "description":"Original version of Roses - The Chainsmokers",
+      "difficulty":4,
+      "genre":"Dance",
+      "preset":{
+        "about":{
+          "color":"#F39FAA",
+          "isTutorialAvailable":false,
+          "presetArtist":"Studio Berict",
+          "songArtist":"The Chainsmokers",
+          "songName":"Roses ft. ROZES"
+        },
+        "bpm":"100",
+        "isGesture":true,
+        "soundCount":203,
+        "tag":"the_chainsmokers_roses_gesture"
+      },
+      "reviews":[
+
+      ],
+      "version":2
+    },
+    {
+      "description":"Original version of the Alan Walker - Faded.",
+      "difficulty":4,
+      "genre":"Dance",
+      "preset":{
+        "about":{
+          "bio":{
+            "name":"Alan Olav Walker",
+            "source":"Powered by Wikipedia X last.fm",
+            "text":"Alan Walker (Alan Olav Walker) is a British-Norwegian record producer who was born in Northampton, England. He recorded electronic dance music single \"Faded\" and his song released on NoCopyrightSounds, \"Fade\".",
+            "title":"Alan Walker's biography"
+          },
+          "color":"#00D3BE",
+          "isTutorialAvailable":false,
+          "presetArtist":"Studio Berict",
+          "songArtist":"Alan Walker",
+          "songName":"Faded"
+        },
+        "bpm":"90",
+        "isGesture":true,
+        "soundCount":241,
+        "tag":"alan_walker_faded_gesture"
+      },
+      "reviews":[
+
+      ],
+      "version":4
+    }
+  ]
+}
