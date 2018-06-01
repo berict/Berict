@@ -76,7 +76,7 @@ function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, t
 }
 
 function getPresets() {
-    var url = "http://api.berict.com/tapad/presets";
+    var url = "http://berict.com/api/tapad/presets";
     var xhr = createCORSRequest('GET', url);
 
     if (!xhr) {
@@ -129,7 +129,6 @@ function createCORSRequest(method, url) {
         // CORS not supported.
         xhr = null;
     }
-    xhr.setRequestHeader('Content-Type', 'text/plain');
     return xhr;
 }
 
