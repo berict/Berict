@@ -11,6 +11,7 @@ var list;
 var response = "";
 
 function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
+    console.log("Added " + songName);
     if ($("#progress").is(":visible")) {
         $("#progress").fadeOut(200, function () {
             $(this).remove();
