@@ -21,8 +21,6 @@ function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, c
     }
     $("img").hide().one("load", function () {
         $(this).fadeIn(200);
-    }).each(function () {
-        if (this.complete) $(this).load();
     });
 }
 
