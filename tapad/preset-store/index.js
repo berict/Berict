@@ -27,6 +27,7 @@ function addListItem(songName, songArtist, presetArtist, isGesturePreset, tag, c
 }
 
 function getPresetElement(songName, songArtist, presetArtist, isGesturePreset, tag, color) {
+    console.log("Added [" + songName + ", " + songArtist + ", " + presetArtist + ", " + isGesturePreset + ", " + tag + ", " + color + "]");
     // maybe use some jquery
     var preset = document.createElement("DIV");
     preset.className = "preset";
