@@ -516,6 +516,7 @@ function setInput(id, errorFileType, result) {
     clear.style.color = "rgb(33, 150, 243)";
     clear.onclick = function () {
         clearInput(id, result);
+        list.css("display", "none");
     };
 
     if (id.includes("sound")) {
@@ -525,6 +526,8 @@ function setInput(id, errorFileType, result) {
             var audios = [];
             var audioCount = 0;
             var list = $("#upload_sounds_list");
+
+            list.css("display", "block");
 
             // Loop through the FileList and print file names to the list
             for (var i = 0, sound; sound = files[i]; i++) {
@@ -737,16 +740,22 @@ function isTutorialAvailable() {
 }
 
 function hideInput(element) {
-    $(element).parent().parent().fadeOut(200, function () {
-        $(this).hide();
-    });
+    var section = $(element).parent().parent();
+    section.fadeTo(200, 0).animate({maxHeight: 0, paddingTop: "0px"}, {duration: 200});
+    section.find("form").animate({marginTop: "0px"}, {duration: 200});
+    section.find(".mdl-textfield__input").val("");
+    setTimeout(function () {
+        section.hide();
+    }, 900)
 }
 
 function showInput(element, prefix) {
-    var elementId = $(element).find("img").attr("id");
-    var input = $("#" + elementId.replace("detail_icon", prefix)).parent().parent().parent();
-    if (input.css("display") == "none") {
-        input.hide().fadeIn(200);
+    var section = $("#" + $(element).find("img").attr("id").replace("detail_icon", prefix)).parent().parent().parent();
+    if (section.css("opacity") == "0") {
+        section.show();
+        var content = $(element).parent().parent().parent();
+        content.css("maxHeight", (content[0].scrollHeight + section[0].scrollHeight) + "px");
+        section.animate({maxHeight: section[0].scrollHeight, paddingTop: "16px"}, {duration: 400}).fadeTo(400, 1);
     }
 }
 

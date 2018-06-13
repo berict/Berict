@@ -46,6 +46,16 @@
             padding-top: 15px;
         }
 
+        .element.input {
+            max-height: 0;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .element.input form {
+            /*margin-top: -30px;*/
+        }
+
         form {
             margin-top: -30px;
         }
@@ -184,6 +194,10 @@
             margin-bottom: 4px;
         }
 
+        .element .mdl-textfield {
+            margin-bottom: 0;
+        }
+
         .detail-icon-button {
             width: 50px;
             height: auto;
@@ -291,10 +305,6 @@
         #about_card .element .info {
             line-height: 26px;
         }
-
-        .help-div {
-            margin-bottom: 8px;
-        }
     </style>
 </head>
 <body>
@@ -315,7 +325,7 @@
                 </button>
             </div>
             <div class="content">
-                <section class="element" style="margin-bottom:20px;">
+                <section class="element">
                     <div class="help-div" style="display:block;">
                         <div class="info">
                             Need help? Visit <a href="/support">the help page</a>.
@@ -335,7 +345,7 @@
                 </button>
             </div>
             <div class="content">
-                <section class="element" style="margin-bottom:20px;">
+                <section class="element">
                     <div class="file-div" id="input_sounds_div">
                         <div class="file-input-description" id="upload_sounds">
                             <img class="file-input-icon" id="input_sounds_icon" src="img/upload.png"/>
@@ -346,7 +356,7 @@
                         <input class="file-input" id="input_sounds" multiple="multiple" name="files[]" type="file"
                                accept="audio/ogg, audio/wav"/>
                     </div>
-                    <div id="upload_sounds_list">
+                    <div id="upload_sounds_list" style="margin-top: 15px; display: none;">
                         <!-- File list -->
                     </div>
                 </section>
@@ -467,8 +477,8 @@
                     <i class='material-icons card-expand-icon close'>keyboard_arrow_up</i>
                 </button>
             </div>
-            <div class="content" style="margin-top:35px;">
-                <section class="element" style="margin-top:-35px; margin-bottom:15px;">
+            <div class="content">
+                <section class="element" style="margin-top:10px; margin-bottom:15px;">
                     <div class="info">
                         <button id="dropdown-preset-difficulty" class="mdl-button">
                             Select difficulty
@@ -566,8 +576,8 @@
                     <i class='material-icons card-expand-icon close'>keyboard_arrow_up</i>
                 </button>
             </div>
-            <div class="content" style="margin-top:35px;">
-                <section class="element">
+            <div class="content">
+                <section class="element" style="margin-top:35px;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="song_name" autocomplete="off">
@@ -647,9 +657,9 @@
                     <i class='material-icons card-expand-icon close'>keyboard_arrow_up</i>
                 </button>
             </div>
-            <div class="content" style="margin-top:20px;">
-                <section class="element" style="padding-top: 0; padding-bottom: 10px">
-                    <div>
+            <div class="content">
+                <section class="element" style="padding-top: 0px; margin-top:20px;">
+                    <div style="padding-bottom: 20px;">
                         <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
                             <img id="detail_icon_youtube" class="detail-icon" src="img/youtube.png">
                             <span class="detail-icon-text">YouTube</span>
@@ -680,7 +690,7 @@
                         </button>
                     </div>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_youtube" autocomplete="off">
@@ -692,7 +702,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_soundcloud" autocomplete="off">
@@ -704,7 +714,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_spotify" autocomplete="off">
@@ -716,7 +726,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_google_play" autocomplete="off">
@@ -728,7 +738,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_apple" autocomplete="off">
@@ -740,7 +750,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_amazon" autocomplete="off">
@@ -752,7 +762,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_pandora" autocomplete="off">
@@ -776,8 +786,8 @@
                     <i class='material-icons card-expand-icon close'>keyboard_arrow_up</i>
                 </button>
             </div>
-            <div class="content" style="margin-top:35px;">
-                <section class="element">
+            <div class="content">
+                <section class="element" style="margin-top: 40px;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="bio_name" autocomplete="off">
@@ -822,7 +832,7 @@
                         </div>
                     </form>
                 </section>
-                <section class="element">
+                <section class="element" style="margin-bottom: -10px;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="bio_source" autocomplete="off">
