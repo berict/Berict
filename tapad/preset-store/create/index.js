@@ -23,14 +23,21 @@ $(document).ready(
         setInput("artist_icon", "png / ico", "inputArtistIcon");
 
         $('.card-expand').click(function () {
-            $(this).parent().parent().parent().toggleClass('expanded');
+            console.log("expand clicked");
+            var content = $(this).parent().parent().parent().find(".content");
+            if (content.css("maxHeight") === "0px") {
+                $(this).parent().parent().parent().addClass('expanded');
+                content.css("maxHeight", content[0].scrollHeight + "px");
+            } else {
+                $(this).parent().parent().parent().removeClass('expanded');
+                content.css("maxHeight", "0px");
+            }
         });
 
-        var cardHeight = $('.card.expanded').innerHeight();
-        $('.card.expanded .content').css('max-height', cardHeight);
-
         $("#preset_sounds").toggleClass('expanded');
+        $("#preset_sounds").find(".content").css("maxHeight", $("#preset_sounds").find(".content")[0].scrollHeight + "px");
         $("#preset_details").toggleClass('expanded');
+        $("#preset_details").find(".content").css("maxHeight", $("#preset_details").find(".content")[0].scrollHeight + "px");
 
         initializeArray();
 
@@ -223,6 +230,7 @@ function isFormFilled() {
         var inputObject = $("#" + input);
         if (inputObject.val() == null) {
             filled = false;
+            console.error("Input null at " + input);
             // empty, trigger mdl input error
             // seems not working
             inputObject.focus();
@@ -237,6 +245,7 @@ function isFormFilled() {
                 // 'SELECT' is in the spinner text, not selected
                 filled = false;
             }
+            console.error("Input not selected at " + inputMenu);
         }
     }
 
