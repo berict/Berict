@@ -24,6 +24,10 @@
 
 # preset workspace
 .preset/
+.*/
+
+# links
+*.lnk
 
 # RITT
 /ritt
