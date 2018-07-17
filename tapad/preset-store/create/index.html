@@ -46,14 +46,14 @@
             padding-top: 15px;
         }
 
-        .element.input {
+        /*.element.input {
             max-height: 0;
             margin: 0;
             opacity: 0;
-        }
+        }*/
 
-        .element.input form {
-            /*margin-top: -30px;*/
+        .element.input button {
+            display: none;
         }
 
         form {
@@ -658,8 +658,9 @@
                 </button>
             </div>
             <div class="content">
-                <section class="element" style="padding-top: 0px; margin-top:20px;">
-                    <div style="padding-bottom: 20px;">
+                <!-- TODO fix revealing link inputs -->
+                <section class="element" style="display: none;">
+                    <div>
                         <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'store')">
                             <img id="detail_icon_youtube" class="detail-icon" src="img/youtube.png">
                             <span class="detail-icon-text">YouTube</span>
@@ -690,7 +691,7 @@
                         </button>
                     </div>
                 </section>
-                <section class="element input">
+                <section class="element input" style="margin-top:20px;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="store_youtube" autocomplete="off">
@@ -852,8 +853,9 @@
                     <i class='material-icons card-expand-icon close'>keyboard_arrow_up</i>
                 </button>
             </div>
-            <div class="content" style="margin-top:20px;">
-                <section class="element" style="padding-top: 0; padding-bottom: 10px">
+            <div class="content">
+                <!-- TODO fix revealing link inputs -->
+                <section class="element" style="display: none;">
                     <div>
                         <button class="detail-icon-button mdl-button mdl-js-button" onclick="showInput(this, 'artist')">
                             <img id="detail_icon_facebook" class="detail-icon" src="img/facebook.png">
@@ -885,7 +887,7 @@
                         </button>
                     </div>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input" style="margin-top:20px;">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_facebook" autocomplete="off">
@@ -897,7 +899,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_twitter" autocomplete="off">
@@ -909,7 +911,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_soundcloud" autocomplete="off">
@@ -921,7 +923,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_instagram" autocomplete="off">
@@ -933,7 +935,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_google_plus" autocomplete="off">
@@ -945,7 +947,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_youtube" autocomplete="off">
@@ -957,7 +959,7 @@
                         </button>
                     </form>
                 </section>
-                <section class="element" style="display: none;">
+                <section class="element input">
                     <form>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="artist_web" autocomplete="off">
