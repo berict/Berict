@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "berict",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
