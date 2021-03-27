@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "berict",
+    "public": "src",
     "ignore": [
       "firebase.json",
       "**/.*",
