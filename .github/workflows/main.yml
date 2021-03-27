@@ -4,7 +4,7 @@ name: deploy_to_firebase_hosting
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy_to_firebase_hosting:
