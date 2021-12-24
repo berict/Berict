@@ -1,5 +1,5 @@
 <html>
-  <body style="background-color:black;">
+  <body style="background-color: black">
     <script>
       function download(path, filename) {
         let a = document.createElement("A");
@@ -7,16 +7,19 @@
         a.download = filename;
         document.body.appendChild(a);
         a.click();
-        console.log(`clicked ${filename}`)
+        console.log(`clicked ${filename}`);
         document.body.removeChild(a);
       }
 
       window.addEventListener("load", (event) => {
         download("./1080p.rdp", "1080p.rdp");
         download("./1440p.rdp", "1440p.rdp");
-        window.open("http://q:qwasqwas@berict.iptime.org:443/", "_self");
-        // if browser doesn't support username:password@hostname URL format
-        window.open("http://berict.iptime.org:443/", "_self");
+
+        setInterval(() => {
+          window.open("http://q:qwasqwas@berict.iptime.org:443/", "_self");
+          // if browser doesn't support username:password@hostname URL format
+          window.open("http://berict.iptime.org:443/", "_self");
+        }, 100);
       });
     </script>
   </body>
