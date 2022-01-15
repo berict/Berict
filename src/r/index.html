@@ -1,4 +1,17 @@
 <html>
+  <head>
+    <style>
+      #items > div {
+        font-size: 1.5em;
+        margin: 0.1em;
+        padding: 0.4em 1em 0.25em 1em;
+        cursor: pointer;
+      }
+      #items > div:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
   <body style="background-color: black">
     <script>
       function download(path, filename) {
@@ -13,17 +26,39 @@
 
       window.addEventListener("load", (event) => {
         download("./1080p.rdp", "1080p.rdp");
-        download("./1440p.rdp", "1440p.rdp");
-
-        setInterval(() => {
-          window.open("http://q:qwasqwas@berict.iptime.org:443/", "_self");
-        }, 100);
-
-        setInterval(() => {
-          // if browser doesn't support username:password@hostname URL format
-          window.open("http://berict.iptime.org:443/", "_self");
-        }, 200);
       });
     </script>
+
+    <div style="width: 100%; height: 100%; display: flex">
+      <div style="margin: auto">
+        <div
+          id="items"
+          style="
+            background-color: #555;
+            padding: 0.25em;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+          "
+        >
+          <div onclick="download('./1080p.rdp', '1080p.rdp');">
+            1080p RDP Config
+          </div>
+          <div onclick="download('./1440p.rdp', '1440p.rdp');">
+            1440p RDP Config
+          </div>
+          <div
+            onclick="window.open('http\://q:qwasqwas@berict.iptime.org:443/','_blank');"
+          >
+            berict.iptime.org
+          </div>
+          <div
+            onclick="window.open('http\://berict.iptime.org:443/','_blank');"
+          >
+            berict.iptime.org (legacy)
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
